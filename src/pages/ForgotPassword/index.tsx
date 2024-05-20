@@ -7,6 +7,7 @@ import { FiLogIn, FiMail } from "react-icons/fi";
 // import { useToast } from "../../hooks/Toast";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import signInBackgroundImg from "../../assets/sign-background.png";
 
 import getValidationErrors from "../../util/getValidationErrors";
 
@@ -14,7 +15,7 @@ import * as Yup from "yup";
 
 import logoImg from "../../assets/logo.png";
 
-import { Container, Content, AnimationContainer, Backgroud } from "./styles";
+import { Container, Content, AnimationContainer } from "./styles";
 // import api from "../../services/api";
 
 interface ForgotPasswordFormData {
@@ -101,7 +102,7 @@ export const ForgortPassword: React.FC = () => {
         </AnimationContainer>
       </Content>
 
-      <Backgroud />
+      <img src={signInBackgroundImg} alt="Image" />
     </Container>
   );
 };
