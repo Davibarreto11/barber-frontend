@@ -5,7 +5,6 @@ import signInBackgroundImg from "../../assets/sign-background.png";
 
 export const Container = styled.div`
   height: 100vh;
-
   display: flex;
   align-items: stretch;
 `;
@@ -13,6 +12,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
 
@@ -34,7 +34,10 @@ const appearFromLeft = keyframes`
 export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
+  border-radius: 9px;
+  background-color: rgba(0,0,0,.2);
   justify-content: center;
+  padding: 45px;
   align-items: center;
 
   animation: ${appearFromLeft} 1s;
@@ -53,7 +56,7 @@ export const AnimationContainer = styled.div`
     }
 
     a {
-      color: #f4ede8;
+      color: #38ada9;
       display: block;
       margin-top: 24px;
       text-decoration: none;
@@ -66,7 +69,7 @@ export const AnimationContainer = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #38ada9;
     display: block;
     margin-top: 10px;
     text-decoration: none;
@@ -80,7 +83,7 @@ export const AnimationContainer = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, "#FF9000")};
+      color: #079992;
     }
   }
 `;

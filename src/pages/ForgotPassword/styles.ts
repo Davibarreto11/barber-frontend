@@ -53,7 +53,7 @@ export const AnimationContainer = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #38ada9;
     display: block;
     margin-top: 10px;
     text-decoration: none;
@@ -67,7 +67,7 @@ export const AnimationContainer = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, "#FF9000")};
+      color: ${shade(0.2, "#38ada9")};
     }
   }
 `;
