@@ -15,8 +15,7 @@ import * as Yup from "yup";
 
 import { useToast } from "../../hooks/Toast";
 
-import logoImg from "../../assets/logo.svg";
-
+import logoImg from "../../assets/logo.png";
 import { Container, Content, AnimationContainer, Background } from "./styles";
 
 interface ResetpasswordFormData {

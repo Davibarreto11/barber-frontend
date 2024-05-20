@@ -9,7 +9,7 @@ import { useAuth } from "../../hooks/Auth";
 import { useToast } from "../../hooks/Toast";
 import getValidationErrors from "../../util/getValidationErrors";
 
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/logo.png";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";

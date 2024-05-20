@@ -1,14 +1,14 @@
-import styled, { keyframes } from 'styled-components'
-import { shade } from 'polished'
+import styled, { keyframes } from "styled-components";
+import { shade } from "polished";
 
-import signInBackgroundImg from '../../assets/sign-background.png'
+import signInBackgroundImg from "../../assets/sign-background.png";
 
 export const Container = styled.div`
   height: 100vh;
 
   display: flex;
   align-items: stretch;
-`
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -16,10 +16,9 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
 
-
   width: 100%;
   max-width: 800px;
-`
+`;
 const appearFromLeft = keyframes`
   from {
     opacity: 0;
@@ -29,7 +28,7 @@ const appearFromLeft = keyframes`
     opacity: 1;
     transform: translateX(0);
   }
-`
+`;
 
 export const AnimationContainer = styled.div`
   display: flex;
@@ -40,42 +39,41 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromLeft} 1s;
 
   img {
-    width: 220px;
+    width: 180px;
   }
 
   form {
-  margin: 80px 0;
-  width: 340px;
-  text-align: center;
+    margin: 80px 0;
+    width: 340px;
+    text-align: center;
 
-  h1 {
-    margin-bottom: 24px;
+    h1 {
+      margin-bottom: 24px;
+    }
   }
 
-}
+  > a {
+    color: #ff9000;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color 0.2s;
 
-> a {
-  color: #FF9000;
-  display: block;
-  margin-top: 10px;
-  text-decoration:  none;
-  transition: color 0.2s;
+    display: flex;
+    align-items: center;
 
-  display: flex;
-  align-items: center;
+    svg {
+      margin-right: 16px;
+    }
 
-  svg {
-    margin-right: 16px;
+    &:hover {
+      color: ${shade(0.2, "#FF9000")};
+    }
   }
-
-  &:hover{
-    color: ${shade(0.2, '#FF9000')};
-  }
-}
-`
+`;
 
 export const Backgroud = styled.div`
   flex: 1;
   background: url(${signInBackgroundImg}) no-repeat center;
   background: cover;
-`
+`;

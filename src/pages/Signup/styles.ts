@@ -1,14 +1,14 @@
-import styled, { keyframes } from 'styled-components'
-import { shade } from 'polished'
+import styled, { keyframes } from "styled-components";
+import { shade } from "polished";
 
-import signUpBackgroundImg from '../../assets/signup-background.png'
+import signUpBackgroundImg from "../../assets/signup-background.png";
 
 export const Container = styled.div`
   height: 100vh;
 
   display: flex;
   align-items: stretch;
-`
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -18,8 +18,7 @@ export const Content = styled.div`
 
   width: 100%;
   max-width: 800px;
-
-`
+`;
 
 const appearFromRight = keyframes`
   from {
@@ -30,7 +29,7 @@ const appearFromRight = keyframes`
     opacity: 1;
     transform: translateX(0);
   }
-`
+`;
 
 export const AnimationContainer = styled.div`
   display: flex;
@@ -41,7 +40,7 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromRight} 1s;
 
   img {
-    width: 220px;
+    width: 180px;
   }
 
   form {
@@ -54,23 +53,23 @@ export const AnimationContainer = styled.div`
     }
 
     a {
-      color: #F4EDE8;
+      color: #f4ede8;
       display: block;
       margin-top: 24px;
       text-decoration: none;
       transition: color 0.2s;
 
       &:hover {
-        color: ${shade(0.2, '#F4EDE8')};
+        color: ${shade(0.2, "#F4EDE8")};
       }
     }
   }
 
   > a {
-    color: #F4EDE8;
+    color: #f4ede8;
     display: block;
     margin-top: 10px;
-    text-decoration:  none;
+    text-decoration: none;
     transition: color 0.2s;
 
     display: flex;
@@ -80,14 +79,14 @@ export const AnimationContainer = styled.div`
       margin-right: 16px;
     }
 
-    &:hover{
-      color: ${shade(0.2, '#F4EDE8')};
+    &:hover {
+      color: ${shade(0.2, "#F4EDE8")};
     }
   }
-`
+`;
 
 export const Background = styled.div`
   flex: 1;
   background: url(${signUpBackgroundImg}) no-repeat center;
   background: cover;
-`
+`;

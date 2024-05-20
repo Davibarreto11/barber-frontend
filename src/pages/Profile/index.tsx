@@ -58,7 +58,7 @@ export const Profile: React.FC = () => {
       addToast({
         type: "error",
         title: "Erro ao atualizar!",
-        description: `${err.response.data.message}`,
+        description: "Ocorreu um erro ao tentar atualizar, cheque seus dados",
       });
     }
   }, []);

@@ -11,8 +11,7 @@ import { useAuth } from "../../hooks/Auth";
 
 import api from "../../services/api";
 
-import logoImg from "../../assets/logo.svg";
-
+import logoImg from "../../assets/logo.png";
 import {
   Container,
   Header,
