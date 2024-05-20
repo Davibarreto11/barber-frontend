@@ -5,6 +5,10 @@ import { type FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 import * as Yup from "yup";
 
+import api from "../../services/api";
+
+import { useToast } from "../../hooks/Toast";
+
 import getValidationErrors from "../../util/getValidationErrors";
 
 import Logo from "../../assets/logo.svg";
@@ -21,6 +25,7 @@ interface SignUpFormData {
 
 export const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const { addToast } = useToast();
   const navigate = useNavigate();
 
   const handleSubmit = useCallback(
@@ -40,11 +45,15 @@ export const SignUp: React.FC = () => {
           abortEarly: false,
         });
 
-        // await api.post("/users", data);
+        await api.post("/users", data);
 
         navigate("/");
 
-
+        addToast({
+          type: "success",
+          title: "Cadastro realizado!",
+          description: "Você já pode fazer seu logon no Gobarber",
+        });
       } catch (err: any) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -54,10 +63,14 @@ export const SignUp: React.FC = () => {
           return;
         }
 
-        
+        addToast({
+          type: "error",
+          title: "Erro na cadastro",
+          description: "Ocorreu um erro ao fazer cadastro, tente novamente",
+        });
       }
     },
-    [navigate]
+    [addToast, navigate]
   );
 
   return (
