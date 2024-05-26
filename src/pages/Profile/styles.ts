@@ -1,8 +1,8 @@
-import { shade } from 'polished'
-import styled from 'styled-components'
+import { shade } from "polished";
+import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100%;
+  height: 100vh;
 
   > header {
     height: 144px;
@@ -23,7 +23,7 @@ export const Container = styled.div`
       }
     }
   }
-`
+`;
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,11 +54,11 @@ export const Content = styled.div`
       transition: color 0.2s;
 
       &:hover {
-        color: ${shade(0.2, '#f4ede8')};
+        color: ${shade(0.2, "#f4ede8")};
       }
     }
   }
-`
+`;
 export const AvatarInput = styled.div`
   margin-bottom: 28px;
   position: relative;
@@ -75,7 +75,7 @@ export const AvatarInput = styled.div`
     position: absolute;
     width: 48px;
     height: 48px;
-    background: #ff9000;
+    background: #38ada9;
     border-radius: 50%;
     right: 0;
     bottom: 0;
@@ -98,7 +98,7 @@ export const AvatarInput = styled.div`
     }
 
     &:hover {
-      background: ${shade(0.2, '#ff9000')};
+      background: ${shade(0.2, "#38ada9")};
     }
   }
-`
+`;

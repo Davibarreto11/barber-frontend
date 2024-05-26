@@ -1,14 +1,15 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
-
 import { useAuth } from "../hooks/Auth";
 
-export const Route: React.FC = () => {
+
+const PrivateRoute: React.FC = () => {
   const { user } = useAuth();
 
-  if (user) {
-    return <Navigate to="/dashboard" />;
-  }
 
-  return <Outlet />;
+  return user ? <Navigate to="/dashboard" /> : <Outlet />;
 };
+
+
+export default PrivateRoute;
+

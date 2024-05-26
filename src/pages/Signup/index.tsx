@@ -10,10 +10,11 @@ import api from "../../services/api";
 import { useToast } from "../../hooks/Toast";
 
 import getValidationErrors from "../../util/getValidationErrors";
+import signUpBackgroundImg from "../../assets/signup-background.png";
 
 import Logo from "../../assets/logo.png";
 
-import { Container, Content, AnimationContainer, Background } from "./styles";
+import { Container, Content, AnimationContainer } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
@@ -75,7 +76,7 @@ export const SignUp: React.FC = () => {
 
   return (
     <Container>
-      <Background />
+      <img src={signUpBackgroundImg} alt="Image" />
 
       <Content>
         <AnimationContainer>

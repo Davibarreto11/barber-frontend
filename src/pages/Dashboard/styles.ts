@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const Header = styled.div`
   padding: 32px 0;
   background: #28262e;
-`
+`;
 export const HeaderContent = styled.div`
   max-width: 1120px;
   margin: 0 auto;
@@ -27,7 +27,7 @@ export const HeaderContent = styled.div`
       height: 20px;
     }
   }
-`
+`;
 export const Profile = styled.div`
   display: flex;
   align-items: center;
@@ -51,19 +51,19 @@ export const Profile = styled.div`
 
     a {
       text-decoration: none;
-      color: #ff9000;
+      color: #38ada9;
 
       &:hover {
         opacity: 0.6;
       }
     }
   }
-`
+`;
 export const Content = styled.div`
   max-width: 1120px;
   margin: 64px auto;
   display: flex;
-`
+`;
 export const Schedule = styled.div`
   flex: 1;
   margin-right: 120px;
@@ -74,7 +74,7 @@ export const Schedule = styled.div`
 
   p {
     margin-top: 8px;
-    color: #ff9000;
+    color: #38ada9;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -85,14 +85,14 @@ export const Schedule = styled.div`
     }
 
     span + span::before {
-      content: '';
+      content: "";
       width: 1px;
       height: 12px;
-      background: #ff9000;
+      background: #38ada9;
       margin: 0 8px;
     }
   }
-`
+`;
 export const NextAppointment = styled.div`
   margin-top: 64px;
 
@@ -117,8 +117,8 @@ export const NextAppointment = styled.div`
       width: 1px;
       left: 0;
       top: 10%;
-      content: '';
-      background: #ff9000;
+      content: "";
+      background: #38ada9;
     }
 
     img {
@@ -129,7 +129,7 @@ export const NextAppointment = styled.div`
 
     strong {
       margin-left: 24px;
-      color: #FFF;
+      color: #fff;
     }
 
     span {
@@ -139,12 +139,12 @@ export const NextAppointment = styled.div`
       color: #999591;
 
       svg {
-        color: #ff9000;
+        color: #38ada9;
         margin-right: 8px;
       }
     }
   }
-`
+`;
 export const Section = styled.section`
   margin-top: 48px;
 
@@ -158,10 +158,10 @@ export const Section = styled.section`
     margin-bottom: 16px;
   }
 
-  >p {
+  > p {
     color: #999591;
   }
-`
+`;
 
 export const Appointment = styled.div`
   display: flex;
@@ -179,7 +179,7 @@ export const Appointment = styled.div`
     width: 70px;
 
     svg {
-      color: #ff9000;
+      color: #38ada9;
       margin-right: 8px;
     }
   }
@@ -205,7 +205,7 @@ export const Appointment = styled.div`
       font-size: 20px;
     }
   }
-`
+`;
 
 export const Calendar = styled.div`
   width: 380px;
@@ -221,7 +221,7 @@ export const Calendar = styled.div`
   .available:not(.outside) {
     background: #3e3b47;
     border-radius: 10px;
-    color: #FFF;
+    color: #fff;
     margin: 2px;
     width: 37px;
     height: 37px;
@@ -233,8 +233,8 @@ export const Calendar = styled.div`
   }
 
   .selected {
-    background: #ff9000 !important;
+    background: #38ada9 !important;
     border-radius: 10px;
     color: #232129 !important;
   }
-`
+`;

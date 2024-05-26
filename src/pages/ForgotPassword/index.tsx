@@ -1,12 +1,13 @@
 import React, { useCallback, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { type FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 import { FiLogIn, FiMail } from "react-icons/fi";
 
-// import { useToast } from "../../hooks/Toast";
+import { useToast } from "../../hooks/Toast";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import signInBackgroundImg from "../../assets/sign-background.png";
 
 import getValidationErrors from "../../util/getValidationErrors";
 
@@ -14,8 +15,8 @@ import * as Yup from "yup";
 
 import logoImg from "../../assets/logo.png";
 
-import { Container, Content, AnimationContainer, Backgroud } from "./styles";
-// import api from "../../services/api";
+import { Container, Content, AnimationContainer } from "./styles";
+import api from "../../services/api";
 
 interface ForgotPasswordFormData {
   email: string;
@@ -25,9 +26,9 @@ export const ForgortPassword: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const formRef = useRef<FormHandles>(null);
-  // const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  // const { addToast } = useToast();
+  const { addToast } = useToast();
 
   const handleSubmit = useCallback(async (data: ForgotPasswordFormData) => {
     try {
@@ -43,16 +44,16 @@ export const ForgortPassword: React.FC = () => {
         abortEarly: false,
       });
 
-      // await api.post("/password/forgot", {
-      //   email: data.email,
-      // });
+      await api.post("/password/forgot", {
+        email: data.email,
+      });
 
-      // addToast({
-      //   type: "success",
-      //   title: "E-mail de recuperação enviado",
-      //   description:
-      //     "Enviamos um e-mail para confirmar a recuperação de senha, cheque sua caixa de entrada",
-      // });
+      addToast({
+        type: "success",
+        title: "E-mail de recuperação enviado",
+        description:
+          "Enviamos um e-mail para confirmar a recuperação de senha, cheque sua caixa de entrada",
+      });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
@@ -62,12 +63,12 @@ export const ForgortPassword: React.FC = () => {
         return;
       }
 
-      // addToast({
-      //   type: "error",
-      //   title: "Erro na recuperação de senha",
-      //   description:
-      //     "Ocorreu um erro ao tentar realizar a recuperação de senha",
-      // });
+      addToast({
+        type: "error",
+        title: "Erro na recuperação de senha",
+        description:
+          "Ocorreu um erro ao tentar realizar a recuperação de senha",
+      });
     } finally {
       setLoading(false);
     }
@@ -101,7 +102,7 @@ export const ForgortPassword: React.FC = () => {
         </AnimationContainer>
       </Content>
 
-      <Backgroud />
+      <img src={signInBackgroundImg} alt="Image" />
     </Container>
   );
 };
