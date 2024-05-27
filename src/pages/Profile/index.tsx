@@ -10,6 +10,7 @@ import { type FormHandles } from "@unform/core";
 
 import { useToast } from "../../hooks/Toast";
 import { useAuth } from "../../hooks/Auth";
+import defaultImage from "../../assets/pngwing.com.png";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -105,9 +106,10 @@ export const Profile: React.FC = () => {
           <AvatarInput>
             <img
               src={
-                user.avatar_url
-                  ? user.avatar_url
-                  : require("../../assets/pngwing.com.png")
+                !user.avatar_url
+                  ?`http//localhost:3333/tmp/${user.avatar_url}`
+                  
+                  :defaultImage  
               }
               alt={user.name}
             />
