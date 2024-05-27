@@ -107,7 +107,7 @@ export const Profile: React.FC = () => {
               src={
                 user.avatar_url
                   ? user.avatar_url
-                  : require("../../assets/BenjaminPortrait.png")
+                  : require("../../assets/pngwing.com.png")
               }
               alt={user.name}
             />
