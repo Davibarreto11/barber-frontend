@@ -225,7 +225,7 @@ export const Hour = styled.button<HoursProps>`
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  opacity: ${(props) => (props.available ? 1 : 0.1)};
+  opacity: ${(props) => (props.available ? 1 : 0.4)};
 `;
 
 export const HourText = styled.span<HourspanProps>`
