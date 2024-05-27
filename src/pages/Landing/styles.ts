@@ -8,14 +8,18 @@ import LandingImg from "../../assets/landing.jpg";
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-  /* align-items: stretch; */
+
   justify-content: space-between  ;
+  gap: 3rem;
   position: relative;
   background: url(${LandingBackground}) no-repeat ;
   background-size: cover;
   `;
 
+
+
 export const Content = styled.div`
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,12 +38,13 @@ const appearFromLeft = keyframes`
   }
 `;
 
+
+
 export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   animation: ${appearFromLeft} 1s;
 
   img {
@@ -76,35 +81,53 @@ export const AnimationContainer = styled.div`
   }
 `;
 
-export const Backgroud = styled.div`
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  width: 35%;
-  height: 70%;
-  background: url(${LandingImg}) no-repeat center;
-  background-size: cover;
-  border-radius: 300px 200px 0px 300px;
-`;
+
+
 
 
 export const TextIntro = styled.div`
-  h1{
+ h1 {
+    display: flex;
     color: #3d3f41;
     font-size: 90px;
     font-weight: 800;
     text-decoration: bold;
-    width: 900px;
+    width: 201%;  /* Definindo a largura para 100% */
     padding-bottom: 2rem;
+    flex-wrap: wrap;  /* Permite quebra de linha no flex */
+    word-break: break-word;  /* Quebra de palavras longas */
   }
-  p{
+
+  p {
     font-size: 20px;
-    width: 650px;
-    color:#3d3f41;
+    width: 200%;  /* Definindo a largura para 100% */
+    color: #3d3f41;
+  }
+
+width: 50%;
+margin-bottom:2rem;
+
+
+  /* Media query para ajustar a fonte e largura em telas menores */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 60px;  /* Reduzindo o tamanho da fonte em telas menores */
     }
 
-width: 400px;
-margin-bottom:2rem;
+    p {
+      font-size: 18px;  /* Ajustando o tamanho da fonte do parágrafo */
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 40px;  /* Reduzindo ainda mais o tamanho da fonte */
+    }
+
+    p {
+      font-size: 16px;  /* Ajustando o tamanho da fonte do parágrafo */
+    }
+  }
 
 `;
 
@@ -117,5 +140,17 @@ h1{
   display: flex;
   font-size: 1.5rem;
   color: #38ada9;
+
+`;
+
+export const Backgroud = styled.div`
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 35%;
+  height: 70%;
+  background: url(${LandingImg}) no-repeat center;
+  background-size: cover;
+  border-radius: 300px 200px 0px 300px;
 
 `;

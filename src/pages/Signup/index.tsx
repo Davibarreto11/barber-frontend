@@ -14,7 +14,7 @@ import signUpBackgroundImg from "../../assets/signup-background.png";
 
 import Logo from "../../assets/logo.png";
 
-import { Container, Content, AnimationContainer } from "./styles";
+import { Container, Content, AnimationContainer, TextIntro, FormContent } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
@@ -76,38 +76,51 @@ export const SignUp: React.FC = () => {
 
   return (
     <Container>
-      <img src={signUpBackgroundImg} alt="Image" />
-
+      {/* <Backgroud /> */}
       <Content>
+
         <AnimationContainer>
-          <img src={Logo} alt="GoBarber" />
+        <TextIntro>
+            <h1>Lorem Ipsum Dollor</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled it to make a
+            type specimen book.
+            </p>
+          </TextIntro>
 
-          <Form
-            placeholder={false}
-            onPointerEnterCapture={false}
-            onPointerLeaveCapture={false}
-            ref={formRef}
-            onSubmit={handleSubmit}
-            initialData={{}}
-          >
-            <h1>Faça seu cadastro</h1>
+        <FormContent>
+              <img src={Logo} alt="GoBarber" />
 
-            <Input name="name" icon={FiUser} placeholder="Nome" />
-            <Input name="email" icon={FiMail} placeholder="E-mail" />
-            <Input
-              type="password"
-              name="password"
-              icon={FiLock}
-              placeholder="Senha"
-            />
+              <Form
+                placeholder={false}
+                onPointerEnterCapture={false}
+                onPointerLeaveCapture={false}
+                ref={formRef}
+                onSubmit={handleSubmit}
+                initialData={{}}
+              >
+                <h1>Faça seu cadastro</h1>
 
-            <Button type="submit">Cadastrar</Button>
-          </Form>
+                <Input name="name" icon={FiUser} placeholder="Nome" />
+                <Input name="email" icon={FiMail} placeholder="E-mail" />
+                <Input
+                  type="password"
+                  name="password"
+                  icon={FiLock}
+                  placeholder="Senha"
+                />
 
-          <Link to="/">
-            <FiArrowLeft />
-            Voltar para logon
-          </Link>
+                <Button type="submit">Cadastrar</Button>
+              </Form>
+
+              <Link to="/">
+                <FiArrowLeft />
+                Voltar para logon
+              </Link>
+          </FormContent>
+
         </AnimationContainer>
       </Content>
     </Container>
