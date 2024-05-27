@@ -14,6 +14,7 @@ import { Dashboard } from "../pages/Dashboard";
 import { Profile } from "../pages/Profile";
 import Providers from "../pages/ListProviders";
 import CreateAppointment from "../pages/CreateAppointment";
+import PrivateRouteBarber from "./PrivateRoutesBarber";
 
 const Router: React.FC = () => (
   <Routes>
@@ -26,7 +27,9 @@ const Router: React.FC = () => (
     </Route>
 
     <Route element={<PrivateUnsigned />}>
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route element={<PrivateRouteBarber />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
       <Route path="/profile" element={<Profile />} />
       <Route path="/providers" element={<Providers />} />
       <Route path="/createAppointment/:id" element={<CreateAppointment />} />

@@ -105,12 +105,7 @@ export const Profile: React.FC = () => {
         >
           <AvatarInput>
             <img
-              src={
-                !user.avatar_url
-                  ?`http//localhost:3333/tmp/${user.avatar_url}`
-                  
-                  :defaultImage  
-              }
+              src={user.avatar_url ? user.avatar_url : defaultImage}
               alt={user.name}
             />
             <label htmlFor="avatar">
