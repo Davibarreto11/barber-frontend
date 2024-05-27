@@ -108,30 +108,35 @@ width: 50%;
 margin-bottom:2rem;
 
 
-  /* Media query para ajustar a fonte e largura em telas menores */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 60px;  /* Reduzindo o tamanho da fonte em telas menores */
-    }
+  @media (max-width: 1368px) {
 
-    p {
-      font-size: 18px;  /* Ajustando o tamanho da fonte do parágrafo */
-    }
-  }
 
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 40px;  /* Reduzindo ainda mais o tamanho da fonte */
-    }
+margin-right: 5rem;
+h1 {
+  font-size: 50px;
+  width:150%;
+}
 
-    p {
-      font-size: 16px;  /* Ajustando o tamanho da fonte do parágrafo */
-    }
-  }
+p {
+  font-size: 14px;
+  width: 90%;
 
+}
+}
+
+@media (max-width: 480px) {
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 16px;
+}
+}
 `;
 
 export const ButtonRow = styled.div`
+margin-left: 10%;
 
 h1{
   padding: 15px 30px 15px 30px;
