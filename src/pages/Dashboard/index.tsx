@@ -143,7 +143,7 @@ export const Dashboard: React.FC = () => {
     <Container>
       <Header>
         <HeaderContent>
-          <img src={logoImg} alt="GoBarber" />
+          <img src={logoImg} alt="Logo" />
 
           <Profile>
             <img src={user.avatar_url} alt={user.name} />

@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 import { shade } from "polished";
 import SigninImg from "../../assets/signupback.jpg";
 
-
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -12,7 +11,6 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
 `;
-
 
 export const Content = styled.div`
   display: flex;
@@ -28,16 +26,16 @@ export const TextIntro = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
   margin-top: 3rem;
   /* margin-left: 60rem; */
 
-  img{
+  img {
     width: 250px !important;
   }
 
- h1 {
-  text-align: center;
+  h1 {
+    text-align: center;
     display: flex;
     color: #3d3f41;
     font-size: 70px;
@@ -56,18 +54,15 @@ export const TextIntro = styled.div`
     color: #3d3f41;
   }
   @media (max-width: 1368px) {
-
-
     /* margin-right: 20rem; */
     h1 {
       font-size: 50px;
-      width:150%;
+      width: 150%;
     }
 
     p {
       font-size: 14px;
       width: 80%;
-
     }
   }
 
@@ -81,7 +76,6 @@ export const TextIntro = styled.div`
     }
   }
 `;
-
 
 const appearFromLeft = keyframes`
   from {
@@ -111,16 +105,16 @@ export const AnimationContainer = styled.div`
     margin: 80px 0;
     width: 340px;
     text-align: center;
-    label{
-        color: #38ada9;
-      }
+    label {
+      color: #38ada9;
+    }
 
     h1 {
-        margin-bottom: 24px;
-        color:#3d3f41;
-        text-transform:capitalize;
-        font-size: 28px;
-        font-weight: 600;
+      margin-bottom: 24px;
+      color: #3d3f41;
+      text-transform: capitalize;
+      font-size: 28px;
+      font-weight: 600;
     }
 
     a {
@@ -136,7 +130,7 @@ export const AnimationContainer = styled.div`
     }
   }
 
-  > a {
+  a {
     color: #38ada9;
     display: block;
     margin-top: 10px;
@@ -157,9 +151,8 @@ export const AnimationContainer = styled.div`
 `;
 
 export const FormContent = styled.div`
-
   background-color: #dddee2;
-  box-shadow: 2px 1px 15px 5px rgba(0,0,0,.1);
+  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,8 +160,7 @@ export const FormContent = styled.div`
   padding: 3rem 3rem 1rem 3rem;
   flex-direction: column;
 
-  img{
+  img {
     margin-bottom: -3rem;
   }
-
 `;
