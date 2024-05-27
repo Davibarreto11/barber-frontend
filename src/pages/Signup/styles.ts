@@ -6,7 +6,7 @@ import LandingImg from "../../assets/landing.jpg";
 
 export const Container = styled.div`
   height: 100vh;
-  background: url(${SignupBackground}) 100%  no-repeat ;
+  background: url(${SignupBackground}) 100% no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -49,23 +49,23 @@ export const TextIntro = styled.div`
     margin-right: 20rem;
     h1 {
       font-size: 50px;
-      width:150%; /* Reduzindo o tamanho da fonte em telas menores */
+      width:150%;
     }
 
     p {
       font-size: 14px;
       width: 80%;
-       /* Ajustando o tamanho da fonte do parágrafo */
+
     }
   }
 
   @media (max-width: 480px) {
     h1 {
-      font-size: 40px;  /* Reduzindo ainda mais o tamanho da fonte */
+      font-size: 40px;
     }
 
     p {
-      font-size: 16px;  /* Ajustando o tamanho da fonte do parágrafo */
+      font-size: 16px;
     }
   }
 `;
