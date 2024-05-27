@@ -6,7 +6,7 @@ import { ptBR } from "date-fns/locale";
 import { DayPicker, type DayModifiers } from "react-day-picker";
 import "react-day-picker/src/style.css";
 
-import { FiClock, FiPower } from "react-icons/fi";
+import { FiClock, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../hooks/Auth";
 
 import api from "../../services/api";
@@ -156,7 +156,7 @@ export const Dashboard: React.FC = () => {
           </Profile>
 
           <button onClick={signOut} type="button">
-            <FiPower />
+            <FiLogOut />
           </button>
         </HeaderContent>
       </Header>
