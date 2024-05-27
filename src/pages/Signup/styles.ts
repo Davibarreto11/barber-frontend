@@ -1,22 +1,97 @@
 import styled, { keyframes } from "styled-components";
 import { shade } from "polished";
+import SignupBackground from "../../assets/signinback.jpg";
+import LandingImg from "../../assets/landing.jpg";
+
 
 export const Container = styled.div`
   height: 100vh;
-
+  background: url(${SignupBackground}) 100%  no-repeat ;
+  background-size: cover;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
 `;
+
+
+
+export const TextIntro = styled.div`
+  /* margin-right: 4rem; */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:2rem;
+  /* margin-left: 60rem; */
+
+ h1 {
+  text-align: center;
+    display: flex;
+    color: #3d3f41;
+    font-size: 80px;
+    font-weight: 800;
+    text-decoration: bold;
+    width: 201%;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  p {
+    font-size: 24px;
+    text-align: center;
+    width: 190%;
+    color: #3d3f41;
+  }
+  @media (max-width: 1368px) {
+
+
+    margin-right: 20rem;
+    h1 {
+      font-size: 50px;
+      width:150%; /* Reduzindo o tamanho da fonte em telas menores */
+    }
+
+    p {
+      font-size: 14px;
+      width: 80%;
+       /* Ajustando o tamanho da fonte do parágrafo */
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 40px;  /* Reduzindo ainda mais o tamanho da fonte */
+    }
+
+    p {
+      font-size: 16px;  /* Ajustando o tamanho da fonte do parágrafo */
+    }
+  }
+`;
+
+// export const Backgroud = styled.div`
+
+//   width: 35%;
+//   height: 70%;
+//   background: url(${LandingImg}) no-repeat center;
+//   background-size: cover;
+//   /* border-radius: 300px 200px 0px 300px; */
+
+// `;
+
+
+
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 100%;
-  max-width: 800px;
+  width: 80%;
 `;
+
+
 
 const appearFromRight = keyframes`
   from {
@@ -29,29 +104,52 @@ const appearFromRight = keyframes`
   }
 `;
 
-export const AnimationContainer = styled.div`
+export const FormContent = styled.div`
+
+  background-color: #dddee2;
+  box-shadow: 2px 1px 15px 5px rgba(0,0,0,.1);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 2rem;
+  padding: 3rem 3rem 1rem 3rem;
+  flex-direction: column;
 
-  animation: ${appearFromRight} 1s;
-
-  img {
-    width: 180px;
+  img{
+    margin-bottom: -3rem;
   }
 
-  form {
-    margin: 80px 0;
-    width: 340px;
-    text-align: center;
+`;
 
-    h1 {
-      margin-bottom: 24px;
+export const AnimationContainer = styled.div`
+  gap: 5rem;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+    img {
+      width: 180px;
     }
 
-    a {
-      color: #f4ede8;
+    form {
+
+      margin: 80px 0;
+      width: 340px;
+      text-align: center;
+      label{
+        color: #38ada9;
+      }
+      h1 {
+        margin-bottom: 24px;
+        color:#3d3f41;
+        text-transform:capitalize;
+        font-size: 28px;
+        font-weight: 600;
+      }
+      a {
+      color: #38ada9;
       display: block;
       margin-top: 24px;
       text-decoration: none;
@@ -63,8 +161,10 @@ export const AnimationContainer = styled.div`
     }
   }
 
+
+
   > a {
-    color: #f4ede8;
+    color: #38ada9;
     display: block;
     margin-top: 10px;
     text-decoration: none;
@@ -78,7 +178,10 @@ export const AnimationContainer = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, "#F4EDE8")};
+      color: #079992;
     }
   }
 `;
+
+
+
