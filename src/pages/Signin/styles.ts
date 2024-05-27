@@ -1,24 +1,87 @@
 import styled, { keyframes } from "styled-components";
 import { shade } from "polished";
+import SigninImg from "../../assets/signupback.jpg";
 
-import signInBackgroundImg from "../../assets/sign-background1.png";
 
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-  justify-content: space-between;
+  background: url(${SigninImg}) 100% no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
+
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   width: 100%;
-  max-width: 800px;
 `;
+
+export const TextIntro = styled.div`
+  /* margin-right: 4rem; */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:2rem;
+  margin-top: 3rem;
+  /* margin-left: 60rem; */
+
+  img{
+    width: 250px !important;
+  }
+
+ h1 {
+  text-align: center;
+    display: flex;
+    color: #3d3f41;
+    font-size: 70px;
+    font-weight: 800;
+    text-decoration: bold;
+    width: 201%;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  p {
+    font-size: 24px;
+    text-align: center;
+    width: 190%;
+    color: #3d3f41;
+  }
+  @media (max-width: 1368px) {
+
+
+    /* margin-right: 20rem; */
+    h1 {
+      font-size: 50px;
+      width:150%;
+    }
+
+    p {
+      font-size: 14px;
+      width: 80%;
+
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+`;
+
 
 const appearFromLeft = keyframes`
   from {
@@ -33,13 +96,11 @@ const appearFromLeft = keyframes`
 
 export const AnimationContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  border-radius: 9px;
-  background-color: rgba(0, 0, 0, 0.2);
-  justify-content: center;
-  padding: 45px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 9rem;
   align-items: center;
-
   animation: ${appearFromLeft} 1s;
 
   img {
@@ -50,9 +111,16 @@ export const AnimationContainer = styled.div`
     margin: 80px 0;
     width: 340px;
     text-align: center;
+    label{
+        color: #38ada9;
+      }
 
     h1 {
-      margin-bottom: 24px;
+        margin-bottom: 24px;
+        color:#3d3f41;
+        text-transform:capitalize;
+        font-size: 28px;
+        font-weight: 600;
     }
 
     a {
@@ -86,4 +154,21 @@ export const AnimationContainer = styled.div`
       color: #079992;
     }
   }
+`;
+
+export const FormContent = styled.div`
+
+  background-color: #dddee2;
+  box-shadow: 2px 1px 15px 5px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 3rem 3rem 1rem 3rem;
+  flex-direction: column;
+
+  img{
+    margin-bottom: -3rem;
+  }
+
 `;
