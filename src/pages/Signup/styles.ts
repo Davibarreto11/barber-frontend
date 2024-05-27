@@ -3,7 +3,6 @@ import { shade } from "polished";
 import SignupBackground from "../../assets/signinback.jpg";
 
 
-
 export const Container = styled.div`
   height: 100vh;
   background: url(${SignupBackground}) 100% no-repeat;
@@ -13,19 +12,17 @@ export const Container = styled.div`
   position: relative;
 `;
 
-
-
 export const TextIntro = styled.div`
   /* margin-right: 4rem; */
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
   /* margin-left: 60rem; */
 
- h1 {
-  text-align: center;
+  h1 {
+    text-align: center;
     display: flex;
     color: #3d3f41;
     font-size: 80px;
@@ -44,18 +41,15 @@ export const TextIntro = styled.div`
     color: #3d3f41;
   }
   @media (max-width: 1368px) {
-
-
     margin-right: 20rem;
     h1 {
       font-size: 50px;
-      width:150%;
+      width: 150%;
     }
 
     p {
       font-size: 14px;
       width: 80%;
-
     }
   }
 
@@ -80,9 +74,6 @@ export const TextIntro = styled.div`
 
 // `;
 
-
-
-
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,8 +81,6 @@ export const Content = styled.div`
   align-items: center;
   width: 80%;
 `;
-
-
 
 const appearFromRight = keyframes`
   from {
@@ -105,9 +94,8 @@ const appearFromRight = keyframes`
 `;
 
 export const FormContent = styled.div`
-
   background-color: #dddee2;
-  box-shadow: 2px 1px 15px 5px rgba(0,0,0,.1);
+  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,10 +103,9 @@ export const FormContent = styled.div`
   padding: 3rem 3rem 1rem 3rem;
   flex-direction: column;
 
-  img{
+  img {
     margin-bottom: -3rem;
   }
-
 `;
 
 export const AnimationContainer = styled.div`
@@ -129,26 +116,25 @@ export const AnimationContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-    img {
-      width: 180px;
+  img {
+    width: 180px;
+  }
+
+  form {
+    margin: 80px 0;
+    width: 340px;
+    text-align: center;
+    label {
+      color: #38ada9;
     }
-
-    form {
-
-      margin: 80px 0;
-      width: 340px;
-      text-align: center;
-      label{
-        color: #38ada9;
-      }
-      h1 {
-        margin-bottom: 24px;
-        color:#3d3f41;
-        text-transform:capitalize;
-        font-size: 28px;
-        font-weight: 600;
-      }
-      a {
+    h1 {
+      margin-bottom: 24px;
+      color: #3d3f41;
+      text-transform: capitalize;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    a {
       color: #38ada9;
       display: block;
       margin-top: 24px;
@@ -161,9 +147,7 @@ export const AnimationContainer = styled.div`
     }
   }
 
-
-
-  > a {
+  a {
     color: #38ada9;
     display: block;
     margin-top: 10px;
@@ -182,6 +166,3 @@ export const AnimationContainer = styled.div`
     }
   }
 `;
-
-
-

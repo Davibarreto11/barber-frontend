@@ -14,10 +14,10 @@ import { Container, Error } from "./styles";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   containerStyle?: object;
-  icon: React.ComponentType<IconBaseProps>;
+  icon?: React.ComponentType<IconBaseProps>;
 }
 
-export const Input: React.FC<InputProps> = ({
+export const Checkbox: React.FC<InputProps> = ({
   name,
   containerStyle,
   icon: Icon,
@@ -25,10 +25,16 @@ export const Input: React.FC<InputProps> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const [isChecked, setIsChecked] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
-  const { fieldName, defaultValue, error, registerField } = useField(name);
+  const {
+    fieldName,
+    defaultValue = false,
+    error,
+    registerField,
+  } = useField(name);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
@@ -39,6 +45,10 @@ export const Input: React.FC<InputProps> = ({
 
     setIsFilled(!!inputRef.current?.value);
   }, []);
+
+  const handleCheckboxChange = (event: any) => {
+    setIsChecked(event.target.checked);
+  };
 
   useEffect(() => {
     registerField({
@@ -56,10 +66,14 @@ export const Input: React.FC<InputProps> = ({
       isFocused={isFocused}
     >
       {Icon && <Icon size={20} />}
+      <label>Sou barbeiro</label>
       <input
+        type="checkbox"
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
+        onChange={handleCheckboxChange}
         defaultValue={defaultValue}
+        value={isChecked ? "true" : "false"}
         ref={inputRef}
         {...rest}
       />

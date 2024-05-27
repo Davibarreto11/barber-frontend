@@ -10,13 +10,19 @@ import api from "../../services/api";
 import { useToast } from "../../hooks/Toast";
 
 import getValidationErrors from "../../util/getValidationErrors";
-import signUpBackgroundImg from "../../assets/signup-background.png";
 
 import Logo from "../../assets/logo.png";
 
-import { Container, Content, AnimationContainer, TextIntro, FormContent } from "./styles";
+import {
+  Container,
+  Content,
+  AnimationContainer,
+  TextIntro,
+  FormContent,
+} from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { Checkbox } from "../../components/Checkbox";
 
 interface SignUpFormData {
   name: string;
@@ -78,49 +84,49 @@ export const SignUp: React.FC = () => {
     <Container>
       {/* <Backgroud /> */}
       <Content>
-
         <AnimationContainer>
-        <TextIntro>
+          <TextIntro>
             <h1>Lorem Ipsum Dollor</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a
-            type specimen book.
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
             </p>
           </TextIntro>
 
-        <FormContent>
-              <img src={Logo} alt="GoBarber" />
+          <FormContent>
+            <img src={Logo} alt="GoBarber" />
 
-              <Form
-                placeholder={false}
-                onPointerEnterCapture={false}
-                onPointerLeaveCapture={false}
-                ref={formRef}
-                onSubmit={handleSubmit}
-                initialData={{}}
-              >
-                <h1>Crie sua <label>conta</label></h1>
+            <Form
+              placeholder={false}
+              onPointerEnterCapture={false}
+              onPointerLeaveCapture={false}
+              ref={formRef}
+              onSubmit={handleSubmit}
+              initialData={{}}
+            >
+              <h1>
+                Crie sua <label>conta</label>
+              </h1>
 
-                <Input name="name" icon={FiUser} placeholder="Nome" />
-                <Input name="email" icon={FiMail} placeholder="E-mail" />
-                <Input
-                  type="password"
-                  name="password"
-                  icon={FiLock}
-                  placeholder="Senha"
-                />
+              <Input name="name" icon={FiUser} placeholder="Nome" />
+              <Input name="email" icon={FiMail} placeholder="E-mail" />
+              <Input
+                type="password"
+                name="password"
+                icon={FiLock}
+                placeholder="Senha"
+              />
+              <Checkbox name="barber" />
+              <Button type="submit">Cadastrar</Button>
+            </Form>
 
-                <Button type="submit">Cadastrar</Button>
-              </Form>
-
-              <Link to="/">
-                <FiArrowLeft />
-                Voltar para o início
-              </Link>
+            <Link to="/">
+              <FiArrowLeft />
+              Voltar para o início
+            </Link>
           </FormContent>
-
         </AnimationContainer>
       </Content>
     </Container>
