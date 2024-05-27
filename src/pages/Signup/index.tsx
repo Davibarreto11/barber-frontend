@@ -117,7 +117,7 @@ export const SignUp: React.FC = () => {
 
               <Link to="/">
                 <FiArrowLeft />
-                Voltar para logon
+                Voltar para o início
               </Link>
           </FormContent>
 
