@@ -101,7 +101,7 @@ export const SignUp: React.FC = () => {
                 onSubmit={handleSubmit}
                 initialData={{}}
               >
-                <h1>Faça seu cadastro</h1>
+                <h1>Crie sua <label>conta</label></h1>
 
                 <Input name="name" icon={FiUser} placeholder="Nome" />
                 <Input name="email" icon={FiMail} placeholder="E-mail" />

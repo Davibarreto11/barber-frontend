@@ -138,7 +138,9 @@ export const AnimationContainer = styled.div`
       margin: 80px 0;
       width: 340px;
       text-align: center;
-
+      label{
+        color: #38ada9;
+      }
       h1 {
         margin-bottom: 24px;
         color:#3d3f41;
