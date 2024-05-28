@@ -1,4 +1,4 @@
-import React, { type ChangeEvent, useCallback, useRef } from "react";
+import React, { type ChangeEvent, useCallback, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FiLock, FiMail, FiUser, FiCamera, FiArrowLeft } from "react-icons/fi";
 
@@ -21,10 +21,12 @@ interface ProfileFormData {
   name: string;
   email: string;
   password: string;
+  avatar: File;
 }
 
 export const Profile: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const [avatarImg, setAvatarImg] = useState<string | null>(null)
 
   const { addToast } = useToast();
   const { user, updateUser } = useAuth();
@@ -45,15 +47,11 @@ export const Profile: React.FC = () => {
         abortEarly: false,
       });
 
+
       await api.put("/profile/update", data).then((response) => {
         updateUser(response.data);
-        addToast({
-          type: "success",
-          title: "Avatar atualizado!",
-          description: "",
-        });
 
-        navigate("/");
+
       });
     } catch (err: any) {
       addToast({
@@ -64,9 +62,15 @@ export const Profile: React.FC = () => {
     }
   }, []);
 
+  const imageUrl = avatarImg ?? defaultImage
+
   const handleAvatarChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       if (e.target.files) {
+        const urlImage = URL.createObjectURL(e.target.files[0])
+
+        setAvatarImg(urlImage)
+
         const data = new FormData();
 
         data.append("avatar", e.target.files[0]);
@@ -105,12 +109,7 @@ export const Profile: React.FC = () => {
         >
           <AvatarInput>
             <img
-              src={
-                !user.avatar_url
-                  ?`http//localhost:3333/tmp/${user.avatar_url}`
-                  
-                  :defaultImage  
-              }
+              src={imageUrl}
               alt={user.name}
             />
             <label htmlFor="avatar">
