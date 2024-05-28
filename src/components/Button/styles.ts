@@ -2,20 +2,24 @@ import styled from 'styled-components'
 import { shade } from 'polished'
 
 export const Container = styled.button`
-  background: #38ada9;
+  background: transparent;
+  border: 3px solid #38ada9;
   height: 56px;
   border-radius: 10px;
-  border: 0;
   padding: 0 16px;
-  color: #312e38;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #38ada9;
   width: 100%;
   font-weight: 500;
   margin-top: 16px;
-  transition: .3s;
+  transition: .4s;
 
 
   &:hover{
-    background: ${shade(0.1, '#38ada9')};
+    transition: .6s;
+    background: #38ada9;
     color: #f5f6fa;
   }
 `

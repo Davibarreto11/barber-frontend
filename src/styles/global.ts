@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   *{
@@ -9,8 +9,8 @@ export default createGlobalStyle`
   }
 
   body {
-   -webkit-font-smoothing: antialiased;
-   background: #312E38;
+    -webkit-font-smoothing: antialiased;
+    background: #dcdde1;
     color: #FFF;
 
   }
@@ -26,4 +26,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-`
+`;

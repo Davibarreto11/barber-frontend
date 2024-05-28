@@ -3,18 +3,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
-  background: #1c1b22;
 
   > header {
     height: 144px;
-    background: #28262e;
+    background: #438b87;
 
     display: flex;
     align-items: center;
 
     div {
-      width: 100%;
-      max-width: 1120px;
+      width: 80%;
       margin: 0 auto;
       padding: 0 20px;
       display: flex;
@@ -22,7 +20,7 @@ export const Container = styled.div`
       justify-content: space-between;
 
       svg {
-        color: #999591;
+        color: #404143;
         width: 24px;
         height: 24px;
         transition: color 0.3s;
@@ -57,6 +55,7 @@ export const Content = styled.div`
       font-size: 24px;
       text-align: left;
       margin-bottom: 20px;
+      color: #404143;
     }
 
     a {
