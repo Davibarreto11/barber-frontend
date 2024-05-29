@@ -1,36 +1,19 @@
 import { shade } from "polished";
 import styled from "styled-components";
+import profileback from "../../assets/profile-background.png";
 
 export const Container = styled.div`
+  background: url(${profileback}) 100% no-repeat;
+  background-size: cover;
   height: 100vh;
 
-  > header {
-    height: 144px;
-    background: #438b87;
 
-    display: flex;
-    align-items: center;
+`;
 
-    div {
-      width: 80%;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+export const FlexForm = styled.div`
+display: flex;
+justify-content: center;
 
-      svg {
-        color: #404143;
-        width: 24px;
-        height: 24px;
-        transition: color 0.3s;
-
-        &:hover {
-          color: ${shade(0.2, "#999591")};
-        }
-      }
-    }
-  }
 `;
 
 export const Content = styled.div`
@@ -38,13 +21,14 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: -170px auto 0;
-  padding: 20px;
+  padding: 80px;
   width: 100%;
   max-width: 600px;
 
+
+
   form {
-    margin: 50px 0;
+    margin: 45px 0;
     width: 100%;
     max-width: 340px;
     text-align: center;
@@ -71,6 +55,51 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const Pointer = styled.div`
+    position: absolute;
+    top: 7%;
+    left: 7%;
+    svg {
+        color: #404143;
+        width: 24px;
+        height: 24px;
+
+        transition: color 0.3s;
+
+        &:hover {
+          color: ${shade(0.2, "#38ada9")};
+        }
+      }
+
+
+`;
+
+export const FormContent = styled.div`
+  background-color: #dddee2;
+  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  width: 130%;
+  position: relative;
+  /* padding: 2rem 9rem 1rem 9rem; */
+
+
+
+
+
+  img {
+    margin-bottom: -3rem;
+  }
+`;
+export const Link = styled.div`
+    margin-bottom: 3rem;
+`;
+
+
+
 
 export const AvatarInput = styled.div`
   margin-bottom: 70px;
@@ -127,3 +156,6 @@ export const AvatarInput = styled.div`
     }
   }
 `;
+
+
+
