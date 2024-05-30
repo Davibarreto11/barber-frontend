@@ -1,6 +1,7 @@
 import { shade } from "polished";
 import styled from "styled-components";
 import profileback from "../../assets/profile-background.png";
+import formback from "../../assets/formback.jpg"
 
 export const Container = styled.div`
   background: url(${profileback}) 100% no-repeat;
@@ -34,10 +35,13 @@ export const Content = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     h1 {
-      font-size: 24px;
+      font-size: 30px;
       text-align: left;
+      text-transform: uppercase;
+      font-weight: 500;
       margin-bottom: 20px;
       color: #404143;
     }
@@ -62,8 +66,8 @@ export const Pointer = styled.div`
     left: 7%;
     svg {
         color: #404143;
-        width: 24px;
-        height: 24px;
+        width: 34px;
+        height: 34px;
 
         transition: color 0.3s;
 
@@ -76,26 +80,23 @@ export const Pointer = styled.div`
 `;
 
 export const FormContent = styled.div`
-  background-color: #dddee2;
+  background: url(${formback}) 100% no-repeat;
+  background-size: cover;
   box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
   width: 130%;
+
   position: relative;
-  /* padding: 2rem 9rem 1rem 9rem; */
-
-
-
+   padding: 0rem 0rem 2rem 0rem;
 
 
   img {
     margin-bottom: -3rem;
   }
-`;
-export const Link = styled.div`
-    margin-bottom: 3rem;
+
 `;
 
 
