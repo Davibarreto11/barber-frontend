@@ -15,7 +15,7 @@ import defaultImage from "../../assets/pngwing.com.png";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-import { Container, AvatarInput, Content } from "./styles";
+import { Container, AvatarInput, Content, FormContent, FlexForm, Pointer } from "./styles";
 
 interface ProfileFormData {
   name: string;
@@ -90,63 +90,65 @@ export const Profile: React.FC = () => {
 
   return (
     <Container>
-      <header>
-        <div>
-          <Link to="/dashboard">
-            <FiArrowLeft />
-          </Link>
-        </div>
-      </header>
+      <FlexForm>
+        <Content>
 
-      <Content>
-        <Form
-          placeholder={false}
-          onPointerEnterCapture={false}
-          onPointerLeaveCapture={false}
-          ref={formRef}
-          initialData={{ name: user.name, email: user.email }}
-          onSubmit={handleSubmit}
-        >
-          <AvatarInput>
-            <img
-              src={imageUrl}
-              alt={user.name}
-            />
-            <label htmlFor="avatar">
-              <FiCamera />
+        <FormContent>
+            <Pointer>
+              <Link to="/dashboard">
+                <FiArrowLeft />
+              </Link>
+            </Pointer>
+            <Form
+              placeholder={false}
+              onPointerEnterCapture={false}
+              onPointerLeaveCapture={false}
+              ref={formRef}
+              initialData={{ name: user.name, email: user.email }}
+              onSubmit={handleSubmit}
+            >
+              <AvatarInput>
+                <img
+                  src={imageUrl}
+                  alt={user.name}
+                />
+                <label htmlFor="avatar">
+                  <FiCamera />
 
-              <input type="file" id="avatar" onChange={handleAvatarChange} />
-            </label>
-          </AvatarInput>
+                  <input type="file" id="avatar" onChange={handleAvatarChange} />
+                </label>
+              </AvatarInput>
 
-          <h1>Meu perfil</h1>
+              <h1>Meu perfil</h1>
 
-          <Input name="name" icon={FiUser} placeholder="Nome" />
-          <Input name="email" icon={FiMail} placeholder="E-mail" />
+              <Input name="name" icon={FiUser} placeholder="Nome" />
+              <Input name="email" icon={FiMail} placeholder="E-mail" />
 
-          <Input
-            containerStyle={{ marginTop: 24 }}
-            name="old_password"
-            icon={FiLock}
-            type="password"
-            placeholder="Senha Atual"
-          />
-          <Input
-            name="password"
-            icon={FiLock}
-            type="password"
-            placeholder="Nova senha"
-          />
-          <Input
-            name="password_confirmation"
-            icon={FiLock}
-            type="password"
-            placeholder="Confirmar senha"
-          />
+              <Input
+                containerStyle={{ marginTop: 24 }}
+                name="old_password"
+                icon={FiLock}
+                type="password"
+                placeholder="Senha Atual"
+              />
+              <Input
+                name="password"
+                icon={FiLock}
+                type="password"
+                placeholder="Nova senha"
+              />
+              <Input
+                name="password_confirmation"
+                icon={FiLock}
+                type="password"
+                placeholder="Confirmar senha"
+              />
 
-          <Button type="submit">Confirmar mundanças</Button>
-        </Form>
-      </Content>
+              <Button type="submit">Confirmar mundanças</Button>
+            </Form>
+          </FormContent>
+        </Content>
+      </FlexForm>
     </Container>
   );
 };
