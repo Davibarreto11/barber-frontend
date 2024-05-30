@@ -8,6 +8,7 @@ import { useToast } from "../../hooks/Toast";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import signInBackgroundImg from "../../assets/sign-background.png";
+import forgotIlus from "../../assets/forgot.svg"
 
 import getValidationErrors from "../../util/getValidationErrors";
 
@@ -15,7 +16,7 @@ import * as Yup from "yup";
 
 import logoImg from "../../assets/logo.png";
 
-import { Container, Content, AnimationContainer } from "./styles";
+import { Container, Content, AnimationContainer, FormContent, TextIntro } from "./styles";
 import api from "../../services/api";
 
 interface ForgotPasswordFormData {
@@ -77,32 +78,45 @@ export const ForgortPassword: React.FC = () => {
   return (
     <Container>
       <Content>
+
         <AnimationContainer>
-          <img src={logoImg} alt="GoBarber" />
+          <FormContent>
+            <img src={logoImg} alt="GoBarber" />
 
-          <Form
-            placeholder={false}
-            onPointerEnterCapture={false}
-            onPointerLeaveCapture={false}
-            ref={formRef}
-            onSubmit={handleSubmit}
-          >
-            <h1>Recuperar senha</h1>
+            <Form
+              placeholder={false}
+              onPointerEnterCapture={false}
+              onPointerLeaveCapture={false}
+              ref={formRef}
+              onSubmit={handleSubmit}
+            >
+              <h1>Recuperar <label>senha</label></h1>
 
-            <Input name="email" icon={FiMail} placeholder="E-mail" />
+              <Input name="email" icon={FiMail} placeholder="E-mail" />
 
-            <Button loading={loading} type="submit">
-              Recuperar
-            </Button>
-          </Form>
-          <Link to="/">
-            <FiLogIn />
-            Voltar ao Login
-          </Link>
+              <Button loading={loading} type="submit">
+                Recuperar
+              </Button>
+            </Form>
+
+            <Link to="/">
+              <FiLogIn />
+              Voltar ao Login
+            </Link>
+          </FormContent>
+          <TextIntro>
+            <img src={forgotIlus} />
+            <h1>Lorem Ipsum Dollor</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled it to make a
+            type specimen book.
+            </p>
+          </TextIntro>
         </AnimationContainer>
       </Content>
 
-      <img src={signInBackgroundImg} alt="Image" />
     </Container>
   );
 };
