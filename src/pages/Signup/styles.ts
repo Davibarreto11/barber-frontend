@@ -15,6 +15,7 @@ export const Container = styled.div`
 export const TextIntro = styled.div`
   /* margin-right: 4rem; */
   width: 300px;
+  margin-left: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,13 +31,14 @@ export const TextIntro = styled.div`
     text-decoration: bold;
     width: 201%;
     padding-bottom: 2rem;
+    padding-left: 5px;
     flex-wrap: wrap;
     word-break: break-word;
   }
 
   p {
     font-size: 24px;
-    text-align: center;
+    text-align: start;
     width: 190%;
     color: #3d3f41;
   }
