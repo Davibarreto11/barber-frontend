@@ -99,7 +99,7 @@ export const ForgortPassword: React.FC = () => {
               </Button>
             </Form>
 
-            <Link to="/">
+            <Link to="/signin">
               <FiLogIn />
               Voltar ao Login
             </Link>
