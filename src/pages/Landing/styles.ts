@@ -89,7 +89,7 @@ export const TextIntro = styled.div`
  h1 {
     display: flex;
     color: #3d3f41;
-    font-size: 90px;
+    font-size: 65px;
     font-weight: 800;
     text-decoration: bold;
     width: 201%;  /* Definindo a largura para 100% */
@@ -104,7 +104,7 @@ export const TextIntro = styled.div`
     color: #3d3f41;
   }
 
-width: 50%;
+width: 40%;
 margin-bottom:2rem;
 
 

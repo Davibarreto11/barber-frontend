@@ -82,11 +82,9 @@ export const Landing: React.FC = () => {
 
           <TextIntro>
             <h1>Agende seu Horário</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a
-            type specimen book.
+            <p>Agende com facilidade, escolha entre os melhores profissionais,
+              gerencie seus horários e desfrute da conveniência de cuidar do
+              seu visual com praticidade e eficiência.
             </p>
           </TextIntro>
 
