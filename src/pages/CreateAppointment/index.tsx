@@ -4,10 +4,10 @@ import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
 import { FiChevronLeft, FiLogOut } from "react-icons/fi";
 import { useToast } from "../../hooks/Toast";
-
 import { useAuth } from "../../hooks/Auth";
 import api from "../../services/api";
 import "react-day-picker/src/style.css";
+
 import {
   Container,
   Header,
@@ -34,10 +34,6 @@ import {
   HeaderContent,
   Profile,
 } from "./styles";
-
-interface RouteParams {
-  providerId: string;
-}
 
 interface Provider {
   id: string;
@@ -79,7 +75,7 @@ const CreateAppointment: React.FC = () => {
       .then((response) => {
         setProviders(response.data);
       });
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     if (selectedProvider) {
@@ -98,7 +94,7 @@ const CreateAppointment: React.FC = () => {
           setAvailability(response.data);
         });
     }
-  }, [selectedDate, selectedProvider]);
+  }, [selectedDate, selectedProvider, token]);
 
   const handleSelectProvider = useCallback((providerId: string) => {
     setSelectedProvider(providerId);
@@ -120,7 +116,6 @@ const CreateAppointment: React.FC = () => {
   const handleCreateAppointment = useCallback(async () => {
     try {
       const date = new Date(selectedDate);
-
       date.setHours(selectedHour);
       date.setMinutes(0);
 
@@ -142,37 +137,34 @@ const CreateAppointment: React.FC = () => {
         title: "Agendamento criado com sucesso",
         description: "",
       });
+      navigate("/dashboard");
     } catch (err) {
       addToast({
         type: "error",
-        title: "Error ao criar agendamento",
+        title: "Erro ao criar agendamento",
         description: "",
       });
     }
-  }, [navigate, selectedDate, selectedHour, selectedProvider]);
+  }, [selectedDate, selectedHour, selectedProvider, token, addToast, navigate]);
 
   const morningAvailability = useMemo(() => {
     return availability
       .filter(({ hour }) => hour < 12)
-      .map(({ hour, available }) => {
-        return {
-          hour,
-          available,
-          hourFormatted: format(new Date().setHours(hour), "HH:00"),
-        };
-      });
+      .map(({ hour, available }) => ({
+        hour,
+        available,
+        hourFormatted: format(new Date().setHours(hour), "HH:00"),
+      }));
   }, [availability]);
 
   const afternoonAvailability = useMemo(() => {
     return availability
       .filter(({ hour }) => hour >= 12)
-      .map(({ hour, available }) => {
-        return {
-          hour,
-          available,
-          hourFormatted: format(new Date().setHours(hour), "HH:00"),
-        };
-      });
+      .map(({ hour, available }) => ({
+        hour,
+        available,
+        hourFormatted: format(new Date().setHours(hour), "HH:00"),
+      }));
   }, [availability]);
 
   return (
@@ -266,21 +258,19 @@ const CreateAppointment: React.FC = () => {
             <SectionTitle>Tarde</SectionTitle>
 
             <SectionContent>
-              {afternoonAvailability.map(
-                ({ hourFormatted, available, hour }) => (
-                  <Hour
-                    available={available}
-                    key={hourFormatted}
-                    disabled={!available}
-                    selected={selectedHour === hour}
-                    onClick={() => handleSelectHour(hour)}
-                  >
-                    <HourText selected={selectedHour === hour}>
-                      {hourFormatted}
-                    </HourText>
-                  </Hour>
-                )
-              )}
+              {afternoonAvailability.map(({ hourFormatted, available, hour }) => (
+                <Hour
+                  available={available}
+                  key={hourFormatted}
+                  disabled={!available}
+                  selected={selectedHour === hour}
+                  onClick={() => handleSelectHour(hour)}
+                >
+                  <HourText selected={selectedHour === hour}>
+                    {hourFormatted}
+                  </HourText>
+                </Hour>
+              ))}
             </SectionContent>
           </Section>
         </Schedule>

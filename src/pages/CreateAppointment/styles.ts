@@ -174,7 +174,7 @@ export const ProviderName = styled.span<ProviderNameProps>`
   margin-left: 8px;
   font-family: "RobotoSlab-Medium", sans-serif;
   font-size: 16px;
-  color: ${(props) => (props.selected ? "#f4ede8" : "#f4ede8")};
+  color: #f4ede8;
 `;
 
 export const Title = styled.h2`
@@ -202,6 +202,7 @@ export const OpenDatePickerButtonText = styled.span`
   font-size: 16px;
   color: #f4ede8;
 `;
+
 export const Section = styled.div`
   margin-bottom: 24px;
 `;
@@ -229,7 +230,7 @@ export const Hour = styled.button<HoursProps>`
 `;
 
 export const HourText = styled.span<HourspanProps>`
-  color: ${(props) => (props.selected ? "#f4ede8" : "#f4ede8")};
+  color: #f4ede8;
   font-family: "RobotoSlab-Regular", sans-serif;
   font-size: 16px;
 `;
