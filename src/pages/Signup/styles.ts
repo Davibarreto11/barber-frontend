@@ -25,7 +25,7 @@ export const TextIntro = styled.div`
     text-align: center;
     display: flex;
     color: #3d3f41;
-    font-size: 80px;
+    font-size: 65px;
     font-weight: 800;
     text-decoration: bold;
     width: 201%;
