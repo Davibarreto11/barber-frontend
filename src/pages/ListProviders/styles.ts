@@ -27,16 +27,38 @@ export const Header = styled.div`
 
 
 export const HeaderContent = styled.div`
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+
+
   > img {
     height: 80px;
+    margin-right: 1rem;
   }
+  h1{
+    font-weight: 500;
+    font-size: 32px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #dcdde1;
+    cursor: default;
 
+  }
+  &:hover{
+
+    transition: 1s;
+  }
+  span{
+
+    color: #0a3d62;
+    font-weight: 400;
+    font-size: 32px;
+  }
   button {
     margin-left: 80px;
     background: transparent;
@@ -64,10 +86,19 @@ export const Profile = styled.div`
   align-items: center;
   margin-left: auto;
 
+
   img {
     width: 65px;
     height: 65px;
     border-radius: 60%;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.1);
+    transition: .2s;
+    &:hover {
+      width: 68px;
+      height: 68px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+      }
   }
 
   div {
@@ -79,24 +110,35 @@ export const Profile = styled.div`
 
     span {
       color: #404143;
+      font-size: 18px;
     }
 
     a {
       text-decoration: none;
-      color: #404143;
-      font-size: large;
+      color: #dcdde1;
+      font-size: 20px;
       transition: .1s;
 
       &:hover {
         transition: .2s;
-        color: #dcdde1;
+        color: white;
       }
     }
   }
 `;
 
 
+export const Tittle = styled.div`
+display: flex;
+gap: .5rem;
+align-items: center;
 
+img{
+  margin-top: 20px;
+  width: 8px;
+
+}
+`;
 
 export const Content = styled.div`
   width: 70%;
@@ -132,8 +174,10 @@ export const Schedule = styled.div`
   h2 {
     color: #404143;
     text-transform: capitalize;
-    font-size: 40px;
-    font-weight: 800 ;
+    font-family: 'Montserrat';
+    font-size: 34px;
+    font-weight: 500 ;
+    letter-spacing: .3rem;
     padding-top: 1.5rem;
   }
   ul{
@@ -206,7 +250,7 @@ export const ProviderInfo = styled.div`
 
 export const ProviderName = styled.span`
   text-transform: capitalize;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   color: #404143;
 `;

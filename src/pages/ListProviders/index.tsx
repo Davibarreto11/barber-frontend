@@ -8,6 +8,8 @@ import elipse from "../../assets/Vector.svg"
 
 import { FiCalendar, FiClock, FiLogOut } from "react-icons/fi";
 
+import title from "../../assets/titlehangout.png"
+
 import {
   Container,
   HeaderContent,
@@ -22,7 +24,7 @@ import {
   ProviderMeta,
   ProviderMetaText,
   FormContent,
-  FlexProvider,
+  FlexProvider, Tittle,
 } from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -68,7 +70,9 @@ const Providers: React.FC = () => {
 
       <Header>
         <HeaderContent>
+
           <img src={logoImg} alt="Logo" />
+          <h1>Barber<span>-Slot</span></h1>
           <Profile>
             <img src={user.avatar_url} alt={user.name} />
             <div>
@@ -89,7 +93,10 @@ const Providers: React.FC = () => {
 
         <FormContent>
           <Schedule>
-            <h2>Cabeleireiros</h2>
+            <Tittle>
+              <img src={title} />
+              <h2>Cabeleireiros</h2>
+            </Tittle>
             <ul
               style={{
                 flex: 1,
@@ -118,7 +125,7 @@ const Providers: React.FC = () => {
                         <ProviderMetaText>8h às 18h</ProviderMetaText>
                       </ProviderMeta>
                     </FlexProvider>
-                    
+
                   </ProviderInfo>
                 </ProviderContainer>
               ))}
