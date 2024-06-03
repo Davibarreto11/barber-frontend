@@ -66,17 +66,19 @@ export const Checkbox: React.FC<InputProps> = ({
       isFocused={isFocused}
     >
       {Icon && <Icon size={20} />}
-      <label>Sou barbeiro</label>
-      <input
-        type="checkbox"
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        onChange={handleCheckboxChange}
-        defaultValue={defaultValue}
-        value={isChecked ? "true" : "false"}
-        ref={inputRef}
-        {...rest}
-      />
+      <div>
+        <input
+          type="checkbox"
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          onChange={handleCheckboxChange}
+          defaultValue={defaultValue}
+          value={isChecked ? "true" : "false"}
+          ref={inputRef}
+          {...rest}
+        />
+        <label>Sou barbeiro</label>
+      </div>
 
       {error && (
         <Error title={error}>

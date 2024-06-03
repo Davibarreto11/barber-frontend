@@ -89,9 +89,9 @@ export const Landing: React.FC = () => {
           </TextIntro>
 
         <ButtonRow>
-          <a href="/signin"><Button> SIGNIN</Button></a>
+          <a href="/signin"><Button> ENTRAR </Button></a>
           <h1> | </h1>
-          <a href="/signup"><Button> SIGNUP</Button></a>
+          <a href="/signup"><Button> CADASTRAR-SE</Button></a>
         </ButtonRow>
 
         </AnimationContainer>

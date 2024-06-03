@@ -4,6 +4,7 @@ import { FiArrowLeft, FiMail, FiUser, FiLock } from "react-icons/fi";
 import { type FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 import * as Yup from "yup";
+import signup from "../../assets/signup.svg";
 
 import api from "../../services/api";
 
@@ -86,6 +87,7 @@ export const SignUp: React.FC = () => {
       <Content>
         <AnimationContainer>
           <TextIntro>
+            <img src={signup} />
             <h1>Crie sua conta!</h1>
             <p>
             Junte-se a nós e descubra como é fácil cuidar do seu visual.
