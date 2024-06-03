@@ -13,7 +13,7 @@ export default createGlobalStyle`
     background: url(${createback}) 100% no-repeat;
     background-size: cover;
     color: #FFF;
-
+    /* overflow: hidden; */
 
   }
 
