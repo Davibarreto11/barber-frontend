@@ -1,27 +1,14 @@
 import styled, { keyframes } from "styled-components";
 import { shade } from "polished";
-import SigninImg from "../../assets/signupback.jpg";
+import SignupBackground from "../../assets/signinback.jpg";
 
 export const Container = styled.div`
   height: 100vh;
-  display: flex;
-  background: url(${SigninImg}) 100% no-repeat;
+  background: url(${SignupBackground}) 100% no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   position: relative;
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
 `;
 
 export const TextIntro = styled.div`
@@ -30,17 +17,12 @@ export const TextIntro = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
-  margin-top: 3rem;
-
-  img {
-    width: 250px !important;
-  }
 
   h1 {
     text-align: center;
     display: flex;
     color: #3d3f41;
-    font-size: 70px;
+    font-size: 80px;
     font-weight: 800;
     text-decoration: bold;
     width: 201%;
@@ -57,6 +39,8 @@ export const TextIntro = styled.div`
   }
 
   @media (max-width: 1368px) {
+    margin-right: 20rem;
+
     h1 {
       font-size: 50px;
       width: 150%;
@@ -68,15 +52,23 @@ export const TextIntro = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     display: none;
   }
 `;
 
-const appearFromLeft = keyframes`
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+`;
+
+const appearFromRight = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
@@ -84,19 +76,28 @@ const appearFromLeft = keyframes`
   }
 `;
 
+export const FormContent = styled.div`
+  background-color: #dddee2;
+  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 3rem 3rem 1rem 3rem;
+  flex-direction: column;
+
+  img {
+    margin-bottom: -3rem;
+  }
+`;
+
 export const AnimationContainer = styled.div`
+  gap: 5rem;
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: space-around;
-  margin-right: 9rem;
+  justify-content: space-between;
   align-items: center;
-  animation: ${appearFromLeft} 1s;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    margin-right: 0;
-  }
 
   img {
     width: 180px;
@@ -109,7 +110,6 @@ export const AnimationContainer = styled.div`
     label {
       color: #38ada9;
     }
-
     h1 {
       margin-bottom: 24px;
       color: #3d3f41;
@@ -117,7 +117,6 @@ export const AnimationContainer = styled.div`
       font-size: 28px;
       font-weight: 600;
     }
-
     a {
       color: #38ada9;
       display: block;
@@ -149,26 +148,13 @@ export const AnimationContainer = styled.div`
       color: #079992;
     }
   }
-`;
 
-export const FormContent = styled.div`
-  background-color: #dddee2;
-  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2rem;
-  padding: 3rem 3rem 1rem 3rem;
-  flex-direction: column;
+  @media (max-width: 480px) {
+    justify-content: center;
+    gap: 0;
 
-  img {
-    margin-bottom: -3rem;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    box-shadow: none;
-    background-color: transparent;
-    padding: 2rem 1rem;
+    form {
+      margin: 0;
+    }
   }
 `;
