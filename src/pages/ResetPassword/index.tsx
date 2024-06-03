@@ -16,7 +16,7 @@ import * as Yup from "yup";
 import { useToast } from "../../hooks/Toast";
 
 import logoImg from "../../assets/logo.png";
-import { Container, Content, AnimationContainer, Background } from "./styles";
+import { Container, Content, AnimationContainer, Background, FormContent } from "./styles";
 
 interface ResetpasswordFormData {
   password: string;
@@ -76,6 +76,7 @@ export const ResetPassword: React.FC = () => {
     <Container>
       <Content>
         <AnimationContainer>
+          <FormContent>
           <img src={logoImg} alt="GoBarber" />
 
           <Form
@@ -103,10 +104,11 @@ export const ResetPassword: React.FC = () => {
             <Button type="submit">Alterar senha</Button>
           </Form>
 
-          <Link to="/">
-            <FiLogIn />
-            Voltar ao login
-          </Link>
+            <Link to="/">
+              <FiLogIn />
+              Voltar ao login
+            </Link>
+          </FormContent>
         </AnimationContainer>
       </Content>
 
