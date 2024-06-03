@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import wellcome from "../../assets/welcome.jpg";
+import income from "../../assets/income.jpg";
+import weather from "../../assets/weather.jpg";
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -158,9 +161,70 @@ export const FormContent = styled.div`
 
   `;
 
-export const Income = styled.div`
+export const Wellcome = styled.div`
+  background: url(${wellcome}) no-repeat 100%;
+  padding: .5rem;
+  padding-left: 1.5rem;
   margin-bottom: 1rem;
-  width: 30%;
+  width: 27rem;
+  height: 13rem;
+  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+
+  h1{
+    width: 70%;
+    text-transform: capitalize;
+    color: #404143;
+    font-weight: 600;
+    span{
+      color: #079992;
+      font-weight: 500;
+    }
+  }
+
+  h2{
+    color: #079992;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+`;
+
+export const Income = styled.div`
+  background: url(${income}) no-repeat 100%;
+  padding: .5rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  width: 27rem;
+  height: 13rem;
+  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h1{
+    width: 65%;
+    font-size: 28px;
+    text-transform: capitalize;
+    color: #404143;
+    font-weight: 600;
+    span{
+      font-size: 28px;
+      padding-bottom: 1rem;
+      color: #079992;
+      font-weight: 600;
+    }
+  }
+`;
+export const Weather = styled.div`
+background: url(${weather}) no-repeat 100%;
+  margin-bottom: 1rem;
+  width: 27rem;
   height: 13rem;
   box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
   border-radius: 1.2rem;
@@ -168,8 +232,8 @@ export const Income = styled.div`
 `;
 
 export const Schedule = styled.div`
+  border: 4px solid #404143;
   flex: 1;
-  width: 12REM;
   overflow-y: scroll;
   padding-right: 20px;
   padding-left:  20px;

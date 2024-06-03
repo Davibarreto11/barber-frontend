@@ -9,7 +9,7 @@ import "react-day-picker/src/style.css";
 import { FiBriefcase, FiClock, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../hooks/Auth";
 
-import api from "../../services/api";
+import api,{apiKey, fetchLocations} from "../../services/api";
 
 import logoImg from "../../assets/logo.png";
 import {
@@ -25,7 +25,9 @@ import {
   Calendar,
   FormContent,
   Income,
-  FlexForm
+  FlexForm,
+  Wellcome,
+  Weather
 
 } from "./styles";
 
@@ -49,6 +51,8 @@ export const Dashboard: React.FC = () => {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [location, setLocation] = useState<any>();
+
 
   const [monthAvailability, setMonthAvailability] = useState<
     MonthAvailabilityItem[]
@@ -151,8 +155,6 @@ export const Dashboard: React.FC = () => {
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
           }}
         >
           <span>Parabens Você Bateu a meta Hoje!</span>
@@ -164,17 +166,20 @@ export const Dashboard: React.FC = () => {
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginRight: 15,
         }}
       >
-        <span>R$ {appointments.length * 30},00/300,00</span>
-        <FiBriefcase size={25} color="#404143" />
+        <span>{appointments.length * 30},00/300,00</span>
       </div>
     );
   };
 
+  const handleSearch = (): any => {
+      fetchLocations({ cityName: "Juazeiro do Norte" }).then(data => { setLocation(data)})
+    }
+useEffect(()=>{
+  handleSearch()
+  console.log(location)
+},[])
   return (
     <Container>
       <Header>
@@ -183,7 +188,6 @@ export const Dashboard: React.FC = () => {
           <h1>Barber<span>-Slot</span></h1>
           <Profile>
             <div>
-              <span style={{ color: "#404143" }}>{plusAppointments()}</span>
             </div>
             <img src={user.avatar_url} alt={user.name} />
             <div>
@@ -202,15 +206,19 @@ export const Dashboard: React.FC = () => {
       <Content>
         <FormContent>
           <FlexForm>
+            <Wellcome>
+              <h1>Seja Bem vindo <span>{user.name}</span></h1>
+              <div>
+                <h2>{format(Date.now(), "HH:mm")}</h2><h4>horas</h4>
+              </div>
+            </Wellcome>
             <Income>
-              <h1></h1>
+              <h1>Sua meta diária é:</h1>
+              <h1>R$:<span> {plusAppointments()}</span></h1>
             </Income>
-            <Income>
-              <h1></h1>
-            </Income>
-            <Income>
-              <h1></h1>
-            </Income>
+            <Weather>
+             <h1>{location?.name}</h1>
+            </Weather>
           </FlexForm>
 
           <FlexForm>
