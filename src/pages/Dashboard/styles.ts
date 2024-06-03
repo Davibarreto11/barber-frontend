@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 100vh;`;
+  min-height: 100vh;
+`;
 
 export const Header = styled.div`
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
@@ -203,7 +204,7 @@ export const NextAppointment = styled.div`
   }
 
   div {
-    background: #404143;
+    background: #438b87;
     display: flex;
     align-items: center;
     padding: 16px 24px;
@@ -229,13 +230,14 @@ export const NextAppointment = styled.div`
 
     strong {
       margin-left: 24px;
+      color: #fff;
     }
 
     span {
       margin-left: auto;
       display: flex;
       align-items: center;
-      color: #999591;
+      color: #fff;
 
       svg {
         color: #38ada9;
