@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-height: 100vh;`;
+  min-height: 100vh;
+
+  `;
+
 
 export const Header = styled.div`
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 25px 0;
+  padding: 20px 0;
   background: #438b87;
   border-radius: 0rem 0rem  3rem 3rem;
   display: flex;
@@ -114,21 +117,29 @@ export const Profile = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 70%;
-  margin: 64px auto;
+  width: 80%;
+  margin: 44px auto;
   display: flex;
 `;
+export const FlexForm = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
 
 export const FormContent = styled.div`
   background-color: #e0e1e3;
   box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  align-items: baseline;
   border-radius: 2rem;
   width: 100%;
-  padding: 3rem;
+  padding: 2rem 3rem 2rem 3rem;
 
   position: relative;
 
@@ -137,7 +148,7 @@ export const FormContent = styled.div`
   }
 
   ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.02);
     border-radius: 10px;
   }
 
@@ -148,19 +159,27 @@ export const FormContent = styled.div`
 
   `;
 
+export const Income = styled.div`
+  margin-bottom: 1rem;
+  width: 30%;
+  height: 13rem;
+  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
+  border-radius: 1.2rem;
 
+`;
 
 export const Schedule = styled.div`
   flex: 1;
   width: 12REM;
   overflow-y: scroll;
   padding-right: 20px;
-
-  height: 500px;
-  box-shadow: inset 0px 30px 13px -30px rgba(0, 0, 0, 0.0), /* Top shadow */
-              inset 0px -30px 15px -30px rgba(0, 0, 0, 0.1); /* Bottom shadow */;
+  padding-left:  20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 465px;
+  box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.35);
   position: relative;
-  border-radius: 0px 0px 10px 10px ;
+  border-radius: 1rem ;
 
 
 
@@ -308,8 +327,9 @@ export const Appointment = styled.div`
 `;
 
 export const Calendar = styled.div`
+  box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.3);
   width: 380px;
-  padding-top: 1rem;
+  padding-top: .3rem;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
