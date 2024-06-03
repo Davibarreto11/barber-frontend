@@ -82,7 +82,7 @@ const Providers: React.FC = () => {
               </Link>
             </div>
           </Profile>
-          <button onClick={signOut} type="button">
+          <button onClick={signOut} type="button" title="Sair">
             <FiLogOut />
           </button>
         </HeaderContent>

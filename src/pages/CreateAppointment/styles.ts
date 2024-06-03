@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { shade } from "polished";
+import formback from "../../assets/formback2.jpg"
 
 interface ProviderContainerProps {
   selected: boolean;
@@ -17,27 +19,62 @@ interface HourspanProps {
   selected: boolean;
 }
 
+
+
 export const Container = styled.div`
+  min-height: 100vh;
+
+  background-size: cover;
   display: flex;
   flex-direction: column;
   flex: 1;
 `;
 
+
+// --------------------------------  Cabeçalho --------------------------------------
 export const Header = styled.div`
-  padding: 32px 0;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 25px 0;
   background: #438b87;
+  border-radius: 0rem 0rem  3rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const HeaderContent = styled.div`
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 
   > img {
     height: 80px;
+    margin-right: 1rem;
   }
+  h1{
+    font-weight: 500;
+    font-size: 32px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #dcdde1;
+    cursor: default;
 
+  }
+  &:hover{
+
+    transition: 1s;
+  }
+  span{
+
+    color: #0a3d62;
+    font-weight: 400;
+    font-size: 32px;
+  }
   button {
     margin-left: 80px;
     background: transparent;
@@ -45,59 +82,183 @@ export const HeaderContent = styled.div`
     transition: box-shadow 0.3s ease-in-out;
 
     svg {
-      color: #404143;
+      color: #dcdde1;
       width: 20px;
       height: 20px;
-    }
+      transition: .2s;
+
 
     &:hover {
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+      transition: .2s;
+      color: #626262;
     }
+  }
   }
 `;
 
 export const Profile = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-left: auto;
 
+
   img {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    border-radius: 60%;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.1);
+    transition: .2s;
+    &:hover {
+      width: 68px;
+      height: 68px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+      }
   }
 
   div {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     margin-left: 16px;
     line-height: 24px;
 
     span {
       color: #404143;
+      font-size: 18px;
     }
 
     a {
       text-decoration: none;
-      color: #404143;
+      color: #dcdde1;
+      font-size: 20px;
+      transition: .1s;
 
       &:hover {
-        opacity: 0.6;
+        transition: .2s;
+        color: white;
       }
     }
   }
 `;
 
+// ------------------------------------------  Conteudo -------------------------------------------
+
+
 export const Content = styled.div`
   width: 70%;
-  margin: 64px auto;
+  margin: 30px auto 0px auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
+
+export const Pointer = styled.div`
+    position: absolute;
+    top: 8.3%;
+    left: 6%;
+    svg {
+        color: #404143;
+        width: 34px;
+        height: 34px;
+
+        transition: color 0.3s;
+
+        &:hover {
+          color: ${shade(0.2, "#38ada9")};
+        }
+      }
+
+
+`;
+export const FormContent = styled.div`
+  background: url(${formback}) no-repeat;
+  background-size: cover;
+  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2rem;
+  flex-direction: column;
+  position: relative;
+  padding: 3.5rem 7rem 3rem 7rem;
+
+
+`;
+export const FlexItens =  styled.div`
+  position: relative;
+
+`;
+
+export const Tittle = styled.div`
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  font-weight: 500;
+  font-size: 26px;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #404143;
+  cursor: default;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+img{
+  width: 10px;
+
+}
+`;
+
+export const Calendar = styled.div`
+  width: 380px;
+  height: 120px;
+  border-radius: 15px;
+  transition: .2s;
+  left: 10rem;
+
+  .DayPicker {
+    position: relative;
+    top: -7rem;
+    left: 10rem;
+    background: #079992;
+    border-radius: 10px;
+    padding: 20px;
+    width: 87%;
+    text-transform: capitalize;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .available:not(.outside) {
+    background: #0a3d62;
+    border-radius: 10px;
+    color: #fff;
+    margin: 2px;
+    width: 37px;
+    height: 37px;
+  }
+
+  .disabled {
+    color: #000 !important;
+    background: transparent !important;
+  }
+
+  .selected {
+    background: #0a3d62 !important;
+    border-radius: 10px;
+    color: #dcdde1 !important;
+  }
+
+  &:hover {
+
+  }
+`;
+
 
 export const Schedule = styled.div`
   flex: 1;
-  margin-right: 120px;
+  transition: .2s;
+  flex-wrap: wrap;
 
   h1 {
     font-size: 36px;
@@ -126,16 +287,29 @@ export const Schedule = styled.div`
   }
 `;
 
+
+
 export const BackButton = styled.button`
-  background: none;
-  border: none;
-  padding-right: 8px;
-  cursor: pointer;
+    position: absolute;
+    top: 7%;
+    left: 7%;
+    svg {
+        color: #404143;
+        width: 34px;
+        height: 34px;
+
+        transition: color 0.3s;
+
+        &:hover {
+          color: ${shade(0.2, "#38ada9")};
+        }
+      }
+
 `;
 
 export const HeaderTitle = styled.h1`
   color: #404143;
-  font-family: "RobotoSlab-Medium", sans-serif;
+  font-family: 'MontSerrat';
   font-size: 24px;
   margin-right: auto;
 `;
@@ -149,6 +323,7 @@ export const UserAvatar = styled.img`
 export const ProvidersListContainer = styled.div`
   height: 112px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   overflow-x: auto;
 `;
@@ -156,6 +331,7 @@ export const ProvidersListContainer = styled.div`
 export const ProviderContainer = styled.button<ProviderContainerProps>`
   background: ${(props) => (props.selected ? "#0a3d62" : "#438b87")};
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 8px 12px;
   margin-right: 16px;
@@ -190,6 +366,7 @@ export const OpenDatePickerButton = styled.button`
   padding: 10px;
   background: #438b87;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   border: none;
@@ -216,6 +393,7 @@ export const SectionTitle = styled.h3`
 
 export const SectionContent = styled.div`
   display: flex;
+  flex-wrap: wrap;
   overflow-x: auto;
 `;
 
@@ -238,6 +416,7 @@ export const HourText = styled.span<HourspanProps>`
 export const CreateAppointmentButton = styled.button`
   height: 50px;
   background: #438b87;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,41 +431,3 @@ export const CreateAppointmentButtonText = styled.span`
   color: #f4ede8;
 `;
 
-export const Calendar = styled.div`
-  width: 380px;
-  border-radius: 15px;
-  padding: 10px;
-
-  .DayPicker {
-    background: #079992;
-    border-radius: 10px;
-    padding: 20px;
-    width: 87%;
-    text-transform: capitalize;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  .available:not(.outside) {
-    background: #0a3d62;
-    border-radius: 10px;
-    color: #fff;
-    margin: 2px;
-    width: 37px;
-    height: 37px;
-  }
-
-  .disabled {
-    color: #000 !important;
-    background: transparent !important;
-  }
-
-  .selected {
-    background: #38ada9 !important;
-    border-radius: 10px;
-    color: #232129 !important;
-  }
-
-  &:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-`;
