@@ -30,47 +30,83 @@ const appearFromLeft = keyframes`
 `;
 
 export const AnimationContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+display: flex;
+width: 100%;
+flex-direction: row;
+justify-content: space-around;
+margin-right: 9rem;
+align-items: center;
+animation: ${appearFromLeft} 1s;
 
-  animation: ${appearFromLeft} 1s;
+img {
+  width: 180px;
+}
 
-  img {
-    width: 180px;
+form {
+  margin: 80px 0;
+  width: 340px;
+  text-align: center;
+  label {
+    color: #38ada9;
   }
 
-  form {
-    margin: 80px 0;
-    width: 340px;
-    text-align: center;
-
-    h1 {
-      margin-bottom: 24px;
-    }
+  h1 {
+    margin-bottom: 24px;
+    color: #3d3f41;
+    text-transform: capitalize;
+    font-size: 28px;
+    font-weight: 600;
   }
 
-  > a {
+  a {
     color: #38ada9;
     display: block;
-    margin-top: 10px;
+    margin-top: 24px;
     text-decoration: none;
     transition: color 0.2s;
-    display: flex;
-    align-items: center;
-
-    svg {
-      margin-right: 16px;
-    }
 
     &:hover {
-      color: ${shade(0.2, "#38ada9")};
+      color: ${shade(0.2, "#F4EDE8")};
     }
   }
+}
+
+a {
+  color: #38ada9;
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 16px;
+  }
+
+  &:hover {
+    color: #079992;
+  }
+}
 `;
 export const Background = styled.div`
   flex: 1;
   background: url(${signInBackgroundImg}) no-repeat center;
   background: cover;
+`;
+
+export const FormContent = styled.div`
+  background-color: #dddee2;
+  box-shadow: 2px 1px 15px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 3rem 3rem 1rem 3rem;
+  flex-direction: column;
+
+  img {
+    margin-bottom: -3rem;
+  }
 `;
