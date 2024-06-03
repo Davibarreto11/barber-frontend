@@ -145,7 +145,7 @@ export const Dashboard: React.FC = () => {
       <Header>
         <HeaderContent>
           <img src={logoImg} alt="Logo" />
-
+          <h1>Barber<span>-Slot</span></h1>
           <Profile>
             <img src={user.avatar_url} alt={user.name} />
             <div>
@@ -164,6 +164,7 @@ export const Dashboard: React.FC = () => {
 
       <Content>
         <FormContent>
+          
           <Schedule>
             <h1>Horários agendados</h1>
             <p>
@@ -243,6 +244,12 @@ export const Dashboard: React.FC = () => {
             </Section>
           </Schedule>
           <Calendar>
+          <h1>Horários agendados</h1>
+            <p>
+              {isToday(selectedDate) && <span>Hoje</span>}
+              <span>{selectedDateAsText}</span>
+              <span>{selectedWeekDay}</span>
+            </p>
             <DayPicker
               className="DayPicker"
               modifiersClassNames={{
