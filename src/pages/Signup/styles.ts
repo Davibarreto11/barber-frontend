@@ -35,7 +35,11 @@ export const TextIntro = styled.div`
     flex-wrap: wrap;
     word-break: break-word;
   }
-
+  img {
+    width: 250px !important;
+    margin-left: -10rem;
+    margin-bottom: 2rem;
+  }
   p {
     font-size: 24px;
     text-align: start;

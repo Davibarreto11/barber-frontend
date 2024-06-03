@@ -11,8 +11,15 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: baseline;
 
+  label{
+
+    font-size: 20px;
+  }
+  div{
+    padding-top: 12px;
+}
   & + div {
     margin-top: 8px;
   }
@@ -21,6 +28,7 @@ export const Container = styled.div<ContainerProps>`
     props.isErrored &&
     css`
       border-color: #c53030;
+      font-size: 32px;
     `}
 
   ${(props) =>
@@ -35,15 +43,19 @@ export const Container = styled.div<ContainerProps>`
     props.isFilled &&
     css`
       color: #38ada9;
+
     `}
 
+
   input {
+    border:transparent;
     border: 0;
-    font-size: 15px;
+    font-size: 25px;
     background: transparent;
     color: #3d3f41;
     margin-left: 10px;
     margin-right: 10px;
+    background-color: #2196F3;
 
     &::placeholder {
       color: #666360;

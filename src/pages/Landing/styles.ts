@@ -139,7 +139,7 @@ export const ButtonRow = styled.div`
 margin-left: 10%;
 
 h1{
-  padding: 15px 30px 15px 30px;
+  padding: 15px 30px 15px 50px;
 }
   width: 20rem;
   display: flex;

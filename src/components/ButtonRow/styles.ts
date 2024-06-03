@@ -7,11 +7,12 @@ export const Container = styled.button`
   border-radius: 40px;
   padding: 0 16px;
   color: #38ada9;
-  width: 100%;
+  width: 115%;
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 700;
   margin-top: 16px;
+  
   transition: .3s;
 
 
