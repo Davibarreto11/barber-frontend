@@ -8,7 +8,7 @@ import "react-day-picker/src/style.css";
 
 import { FiBriefcase, FiClock, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../hooks/Auth";
-
+import locationimg from "../../assets/location.png"
 import api,{apiKey, fetchLocations} from "../../services/api";
 
 import logoImg from "../../assets/logo.png";
@@ -173,13 +173,10 @@ export const Dashboard: React.FC = () => {
     );
   };
 
-  const handleSearch = (): any => {
-      fetchLocations({ cityName: "Juazeiro do Norte" }).then(data => { setLocation(data)})
-    }
-useEffect(()=>{
-  handleSearch()
-  console.log(location)
-},[])
+    useEffect(() => {
+      fetchLocations({ cityName: "Juazeiro do Norte" }).then(data => {setLocation(data)})
+ }, [location])
+
   return (
     <Container>
       <Header>
@@ -217,7 +214,17 @@ useEffect(()=>{
               <h1>R$:<span> {plusAppointments()}</span></h1>
             </Income>
             <Weather>
-             <h1>{location?.name}</h1>
+              <div>
+                <h1>{location?.location.name},</h1>
+                <div style={{display: "flex"}}>
+                  <h2 style={{ }}>{location?.location.region}</h2>
+                  <img src= {locationimg}/>
+                </div>
+              </div>
+              <div style={{display: "flex"}}>
+                <h2 style={{width: "15%"}}>{location?.current.temp_c} </h2>
+                <span> °C</span>
+              </div>
             </Weather>
           </FlexForm>
 

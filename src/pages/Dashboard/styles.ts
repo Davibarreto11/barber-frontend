@@ -141,7 +141,7 @@ export const FormContent = styled.div`
   align-items: baseline;
   border-radius: 2rem;
   width: 100%;
-  padding: 2rem 3rem 2rem 3rem;
+  padding: 2rem 3rem 2.5rem 3rem;
 
   position: relative;
 
@@ -191,7 +191,19 @@ export const Wellcome = styled.div`
     font-size: 30px;
     font-weight: 600;
   }
+  div{
+    display: flex ;
+    align-items: center;
+    text-transform: capitalize;
+    gap: .5rem;
 
+    h4{
+      font-size: 20px;
+      color: #404143;
+      font-weight: 600;
+
+    }
+  }
 `;
 
 export const Income = styled.div`
@@ -222,17 +234,54 @@ export const Income = styled.div`
   }
 `;
 export const Weather = styled.div`
-background: url(${weather}) no-repeat 100%;
+  background: url(${weather}) no-repeat 100%;
+  padding: .5rem;
+  padding-left: 1.5rem;
   margin-bottom: 1rem;
   width: 27rem;
   height: 13rem;
   box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
   border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-around;
 
+  img{
+      width: 25px;
+      height: 25px;
+    }
+
+  h1{
+    width: 65%;
+    font-size: 28px;
+    text-transform: capitalize;
+    color: #404143;
+    font-weight: 600;
+    span{
+      font-size: 28px;
+      padding-bottom: 1rem;
+      color: #079992;
+      font-weight: 600;
+    }
+
+  }
+
+  h2{
+    font-weight: 600;
+    font-size: 28px;
+    color: #079992;
+
+  }
+  span{
+      font-size: 28px;
+      padding-bottom: 1rem;
+      color: #404143;
+      font-weight: 600;
+    }
 `;
 
 export const Schedule = styled.div`
-  border: 4px solid #404143;
   flex: 1;
   overflow-y: scroll;
   padding-right: 20px;
@@ -242,7 +291,7 @@ export const Schedule = styled.div`
   height: 465px;
   box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.35);
   position: relative;
-  border-radius: 1rem ;
+  border-radius: 1rem .1rem 1rem 1rem;
 
 
 
