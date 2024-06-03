@@ -74,14 +74,55 @@ export const Content = styled.div`
   display: flex;
 `;
 
+export const FormContent = styled.div`
+  background-color: #e0e1e3;
+  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 2rem;
+  width: 100%;
+  padding: 3rem;
+
+  position: relative;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #404143;
+    border-radius: 20px;
+  }
+
+  `;
+
+
+
 export const Schedule = styled.div`
   flex: 1;
   margin-right: 120px;
+  overflow-y: scroll;
+  padding-right: 20px;
+  
+  height: 500px;
+  box-shadow: inset 0px 30px 13px -30px rgba(0, 0, 0, 0.1), /* Top shadow */
+              inset 0px -30px 13px -30px rgba(0, 0, 0, 0.1); /* Bottom shadow */;
+  position: relative;
+
+
 
   h1 {
     font-size: 36px;
     color: #404143;
   }
+
 
   p {
     margin-top: 8px;
@@ -115,7 +156,7 @@ export const NextAppointment = styled.div`
   }
 
   div {
-    background: #3e3b47;
+    background: #404143;
     display: flex;
     align-items: center;
     padding: 16px 24px;
@@ -123,14 +164,14 @@ export const NextAppointment = styled.div`
     margin-top: 24px;
     position: relative;
 
+
     &::before {
       position: absolute;
-      height: 80%;
-      width: 1px;
+      height: 85%;
+      width: 3px;
       left: 0;
-      top: 10%;
       content: "";
-      background: #38ada9;
+      background: #079992;
     }
 
     img {
@@ -141,7 +182,6 @@ export const NextAppointment = styled.div`
 
     strong {
       margin-left: 24px;
-      color: #404143;
     }
 
     span {
