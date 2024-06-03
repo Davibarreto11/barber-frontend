@@ -70,9 +70,8 @@ export const Signin: React.FC = () => {
     <Container>
       <Content>
         <AnimationContainer>
-
           <FormContent>
-          <img src={Logo} alt="GoBarber" />
+            <img src={Logo} alt="GoBarber" />
             <Form
               placeholder={false}
               onPointerEnterCapture={false}
@@ -103,20 +102,16 @@ export const Signin: React.FC = () => {
 
           <TextIntro>
             <img src={signinIlustration} alt="" />
-            <h1>Bem-vindo de volta!</h1>
+            <h1>Bem-vindo de Volta!</h1>
             <p>
-              Faça login para continuar. Com nosso sistema,
-              você terá acesso rápido e fácil aos melhores cabeleireiros da cidade.
-              Agendar um corte de cabelo nunca foi tão simples!
+              Estamos felizes em vê-lo novamente! Faça login para acessar sua conta e continuar 
+              aproveitando todos os nossos serviços. Mantenha seu perfil atualizado, gerencie 
+              seus agendamentos e não perca nenhuma atualização. Se precisar de qualquer ajuda, 
+              nossa equipe de suporte está sempre à disposição.
             </p>
           </TextIntro>
         </AnimationContainer>
-
       </Content>
-
-
-
-      {/* <img src={signInBackgroundImg} alt="Logo" /> */}
     </Container>
   );
 };
