@@ -152,7 +152,7 @@ export const FormContent = styled.div`
 
 export const Schedule = styled.div`
   flex: 1;
-  margin-right: 120px;
+  width: 12REM;
   overflow-y: scroll;
   padding-right: 20px;
 
@@ -309,7 +309,38 @@ export const Appointment = styled.div`
 
 export const Calendar = styled.div`
   width: 380px;
+  padding-top: 1rem;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 32px;
+    color: #404143;
+  }
+
+
+  p {
+    margin-top: 8px;
+    color: #404143;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    span + span::before {
+      content: "";
+      width: 1px;
+      height: 12px;
+      background: #404143;
+      margin: 0 8px;
+    }
+  }
 
   .DayPicker {
     background: #079992;
@@ -340,7 +371,4 @@ export const Calendar = styled.div`
     color: #232129 !important;
   }
 
-  &:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  }
 `;
