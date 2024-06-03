@@ -16,7 +16,7 @@ import * as Yup from "yup";
 
 
 
-import { Container, Content, AnimationContainer, Backgroud, ButtonRow , TextIntro} from "./styles";
+import { Container, Content, AnimationContainer, Background, ButtonRow, TextIntro } from "./styles";
 // import api from "../../services/api";
 
 interface ForgotPasswordFormData {
@@ -81,23 +81,24 @@ export const Landing: React.FC = () => {
         <AnimationContainer>
 
           <TextIntro>
-            <h1>Agende seu Horário</h1>
-            <p>Agende com facilidade, escolha entre os melhores profissionais,
-              gerencie seus horários e desfrute da conveniência de cuidar do
-              seu visual com praticidade e eficiência.
-            </p>
+             <h1>Reserve Seu Horário Conosco</h1>
+  <p>
+    Bem-vindo ao nosso sistema de agendamento online! Estamos aqui para facilitar a sua vida.
+    Com apenas alguns cliques, você pode reservar um horário que se encaixe na sua agenda. 
+    Aproveite a conveniência de marcar seus compromissos de forma rápida e fácil, onde quer que você esteja.
+  </p>
           </TextIntro>
 
         <ButtonRow>
-          <a href="/signin"><Button> ENTRAR </Button></a>
-          <h1> | </h1>
-          <a href="/signup"><Button> CADASTRAR-SE</Button></a>
+          <a href="/signin"><Button> SIGNIN</Button></a>
+          
+          <a href="/signup"><Button> SIGNUP</Button></a>
         </ButtonRow>
 
         </AnimationContainer>
       </Content>
 
-      <Backgroud />
+      <Background />
     </Container>
   );
 };
