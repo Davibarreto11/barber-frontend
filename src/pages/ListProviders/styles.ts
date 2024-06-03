@@ -6,9 +6,8 @@ import elipse from "../../assets/Vector.svg"
 // import { Flat } from 'react-native'
 
 export const Container = styled.div`
-height: 100vh;
-background: url(${userback}) 100% no-repeat;
-  background-size: cover;
+min-height: 100vh;
+
 
 `;
 
@@ -66,14 +65,17 @@ export const HeaderContent = styled.div`
     transition: box-shadow 0.3s ease-in-out;
 
     svg {
-      color: #404143;
-      width: 20px;
-      height: 20px;
-    }
+      color: #dcdde1;
+      width: 25px;
+      height: 25px;
+      transition: .2s;
+
 
     &:hover {
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+      transition: .2s;
+      color: #626262;
     }
+  }
   }
 `;
 
@@ -129,20 +131,19 @@ export const Profile = styled.div`
 
 
 export const Tittle = styled.div`
-display: flex;
-gap: .5rem;
-align-items: center;
-
+  display: flex;
+  gap: .5rem;
+  align-items: center;
 img{
   margin-top: 20px;
-  width: 8px;
+  width: 10px;
 
 }
 `;
 
 export const Content = styled.div`
   width: 70%;
-  margin: 5rem auto 0px auto;
+  margin: 3.5rem auto 0px auto;
   display: flex;
 `;
 
@@ -156,6 +157,7 @@ export const FormContent = styled.div`
   align-items: center;
   border-radius: 2rem;
   width: 100%;
+  padding-top: 1.2rem;
 
   position: relative;
 
@@ -173,9 +175,9 @@ export const Schedule = styled.div`
 
   h2 {
     color: #404143;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: 'Montserrat';
-    font-size: 34px;
+    font-size: 45px;
     font-weight: 500 ;
     letter-spacing: .3rem;
     padding-top: 1.5rem;

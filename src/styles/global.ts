@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import createback from "../assets/userback.jpg"
 export default createGlobalStyle`
   *{
     margin: 0;
@@ -10,8 +10,10 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-    background: #dcdde1;
+    background: url(${createback}) 100% no-repeat;
+    background-size: cover;
     color: #FFF;
+
 
   }
 

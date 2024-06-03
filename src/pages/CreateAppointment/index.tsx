@@ -2,13 +2,16 @@ import React, { useEffect, useCallback, useState, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
-import { FiChevronLeft, FiLogOut } from "react-icons/fi";
+import { FiChevronLeft, FiLogOut, FiArrowLeft } from "react-icons/fi";
 import { useToast } from "../../hooks/Toast";
 import { useAuth } from "../../hooks/Auth";
 import api from "../../services/api";
 import "react-day-picker/src/style.css";
+import title from "../../assets/titlehangout.png"
+import logoImg from "../../assets/logo.png";
 
 import {
+
   Container,
   Header,
   BackButton,
@@ -33,6 +36,7 @@ import {
   CreateAppointmentButtonText,
   HeaderContent,
   Profile,
+  FormContent, FlexItens,Tittle,Pointer,
 } from "./styles";
 
 interface Provider {
@@ -171,10 +175,8 @@ const CreateAppointment: React.FC = () => {
     <Container>
       <Header>
         <HeaderContent>
-          <BackButton onClick={navigateBack}>
-            <FiChevronLeft size={24} color="#999591" />
-          </BackButton>
-
+          <img src={logoImg} alt="Logo" />
+          <h1>Barber<span>-Slot</span></h1>
           <Profile>
             <UserAvatar src={user.avatar_url} alt={user.name} />
             <div>
@@ -185,100 +187,115 @@ const CreateAppointment: React.FC = () => {
             </div>
           </Profile>
 
-          <button onClick={navigateToProfile}>
-            <FiLogOut />
-          </button>
         </HeaderContent>
       </Header>
 
+
       <Content>
-        <HeaderTitle>Cabeleireiros</HeaderTitle>
-        <ProvidersListContainer>
-          {providers.map((provider) => (
-            <ProviderContainer
-              key={provider.id}
-              onClick={() => handleSelectProvider(provider.id)}
-              selected={provider.id === selectedProvider}
-            >
-              <ProviderAvatar src={provider.avatar_url} />
-              <ProviderName selected={provider.id === selectedProvider}>
-                {provider.name}
-              </ProviderName>
-            </ProviderContainer>
-          ))}
-        </ProvidersListContainer>
-        <Calendar>
-          <Title>Escolha a data</Title>
+        <FormContent>
+        <Pointer>
+              <Link to="/dashboard">
+                <FiArrowLeft />
+              </Link>
+            </Pointer>
+          <Tittle>
+              <img src={title} />
+              <h2>Agendamento</h2>
+          </Tittle>
+          <HeaderTitle>Cabeleireiros</HeaderTitle>
 
-          <OpenDatePickerButton onClick={handleToggleDatePicker}>
-            <OpenDatePickerButtonText>
-              Selecionar outra data
-            </OpenDatePickerButtonText>
-          </OpenDatePickerButton>
-
-          {showDatePicker && (
-            <DayPicker
-              className="DayPicker"
-              modifiersClassNames={{
-                selected: "selected",
-                disabled: "disabled",
-                outside: "outside",
-                available: "available",
-              }}
-              selected={selectedDate}
-              onDayClick={handleDateChange}
-            />
-          )}
-        </Calendar>
-
-        <Schedule>
-          <Title>Escolha o horário</Title>
-
-          <Section>
-            <SectionTitle>Manhã</SectionTitle>
-
-            <SectionContent>
-              {morningAvailability.map(({ hourFormatted, available, hour }) => (
-                <Hour
-                  available={available}
-                  key={hourFormatted}
-                  disabled={!available}
-                  selected={selectedHour === hour}
-                  onClick={() => handleSelectHour(hour)}
+          <FlexItens>
+            <ProvidersListContainer>
+              {providers.map((provider) => (
+                <ProviderContainer
+                  key={provider.id}
+                  onClick={() => handleSelectProvider(provider.id)}
+                  selected={provider.id === selectedProvider}
                 >
-                  <HourText selected={selectedHour === hour}>
-                    {hourFormatted}
-                  </HourText>
-                </Hour>
+                  <ProviderAvatar src={provider.avatar_url} />
+                  <ProviderName selected={provider.id === selectedProvider}>
+                    {provider.name}
+                  </ProviderName>
+                </ProviderContainer>
               ))}
-            </SectionContent>
-          </Section>
+            </ProvidersListContainer>
 
-          <Section>
-            <SectionTitle>Tarde</SectionTitle>
 
-            <SectionContent>
-              {afternoonAvailability.map(({ hourFormatted, available, hour }) => (
-                <Hour
-                  available={available}
-                  key={hourFormatted}
-                  disabled={!available}
-                  selected={selectedHour === hour}
-                  onClick={() => handleSelectHour(hour)}
-                >
-                  <HourText selected={selectedHour === hour}>
-                    {hourFormatted}
-                  </HourText>
-                </Hour>
-              ))}
-            </SectionContent>
-          </Section>
-        </Schedule>
+            <Calendar>
+              <Title>Escolha a data</Title>
 
-        <CreateAppointmentButton onClick={handleCreateAppointment}>
-          <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
-        </CreateAppointmentButton>
+              <OpenDatePickerButton onClick={handleToggleDatePicker}>
+                <OpenDatePickerButtonText>
+                  Selecionar outra data
+                </OpenDatePickerButtonText>
+              </OpenDatePickerButton>
+
+              {showDatePicker && (
+                <DayPicker
+                  className="DayPicker"
+                  modifiersClassNames={{
+                    selected: "selected",
+                    disabled: "disabled",
+                    outside: "outside",
+                    available: "available",
+                  }}
+                  selected={selectedDate}
+                  onDayClick={handleDateChange}
+                />
+              )}
+            </Calendar>
+          </FlexItens>
+
+          <Schedule>
+            <Title>Escolha o horário:</Title>
+
+            <Section>
+              <SectionTitle>Manhã:</SectionTitle>
+
+              <SectionContent>
+                {morningAvailability.map(({ hourFormatted, available, hour }) => (
+                  <Hour
+                    available={available}
+                    key={hourFormatted}
+                    disabled={!available}
+                    selected={selectedHour === hour}
+                    onClick={() => handleSelectHour(hour)}
+                  >
+                    <HourText selected={selectedHour === hour}>
+                      {hourFormatted}
+                    </HourText>
+                  </Hour>
+                ))}
+              </SectionContent>
+            </Section>
+
+            <Section>
+              <SectionTitle>Tarde:</SectionTitle>
+
+              <SectionContent>
+                {afternoonAvailability.map(({ hourFormatted, available, hour }) => (
+                  <Hour
+                    available={available}
+                    key={hourFormatted}
+                    disabled={!available}
+                    selected={selectedHour === hour}
+                    onClick={() => handleSelectHour(hour)}
+                  >
+                    <HourText selected={selectedHour === hour}>
+                      {hourFormatted}
+                    </HourText>
+                  </Hour>
+                ))}
+              </SectionContent>
+            </Section>
+          </Schedule>
+
+          <CreateAppointmentButton onClick={handleCreateAppointment}>
+            <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
+          </CreateAppointmentButton>
+        </FormContent>
       </Content>
+
     </Container>
   );
 };

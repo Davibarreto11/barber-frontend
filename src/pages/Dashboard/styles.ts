@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  min-height: 100vh;`;
 
 export const Header = styled.div`
   padding: 32px 0;
