@@ -117,7 +117,7 @@ export const FormContent = styled.div`
 export const AnimationContainer = styled.div`
   gap: 5rem;
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -127,7 +127,7 @@ export const AnimationContainer = styled.div`
   }
 
   form {
-    margin: 80px 0;
+    margin: 80px 0px 50px 0px;
     width: 340px;
     text-align: center;
     label {
