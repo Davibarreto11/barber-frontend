@@ -18,17 +18,19 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const TextIntro = styled.div`
-  /* margin-right: 4rem; */
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
   margin-top: 3rem;
-  /* margin-left: 60rem; */
 
   img {
     width: 250px !important;
@@ -38,7 +40,7 @@ export const TextIntro = styled.div`
     text-align: center;
     display: flex;
     color: #3d3f41;
-    font-size: 65px;
+    font-size: 70px;
     font-weight: 800;
     text-decoration: bold;
     width: 201%;
@@ -53,8 +55,8 @@ export const TextIntro = styled.div`
     width: 190%;
     color: #3d3f41;
   }
+
   @media (max-width: 1368px) {
-    /* margin-right: 20rem; */
     h1 {
       font-size: 50px;
       width: 150%;
@@ -66,14 +68,8 @@ export const TextIntro = styled.div`
     }
   }
 
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 40px;
-    }
-
-    p {
-      font-size: 16px;
-    }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -96,6 +92,11 @@ export const AnimationContainer = styled.div`
   margin-right: 9rem;
   align-items: center;
   animation: ${appearFromLeft} 1s;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-right: 0;
+  }
 
   img {
     width: 180px;
@@ -162,5 +163,12 @@ export const FormContent = styled.div`
 
   img {
     margin-bottom: -3rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 2rem 1rem;
   }
 `;
