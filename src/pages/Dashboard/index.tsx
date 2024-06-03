@@ -23,6 +23,7 @@ import {
   Section,
   Appointment,
   Calendar,
+  FormContent,
 } from "./styles";
 
 interface MonthAvailabilityItem {
@@ -176,7 +177,7 @@ export const Dashboard: React.FC = () => {
       <Header>
         <HeaderContent>
           <img src={logoImg} alt="Logo" />
-
+          <h1>Barber<span>-Slot</span></h1>
           <Profile>
             <div>
               <span style={{ color: "#404143" }}>{plusAppointments()}</span>
@@ -196,105 +197,114 @@ export const Dashboard: React.FC = () => {
       </Header>
 
       <Content>
-        <Schedule>
+        <FormContent>
+          
+          <Schedule>
+            <h1>Horários agendados</h1>
+            <p>
+              {isToday(selectedDate) && <span>Hoje</span>}
+              <span>{selectedDateAsText}</span>
+              <span>{selectedWeekDay}</span>
+            </p>
+
+            {isToday(selectedDate) && nextAppointment && (
+              <NextAppointment>
+                <strong>Agendamento a seguir</strong>
+                <div>
+                  <img
+                    src={nextAppointment.user.avatar_url}
+                    alt={nextAppointment.user.name}
+                  />
+
+                  <strong>{nextAppointment.user.name}</strong>
+                  <span>
+                    <FiClock />
+                    {nextAppointment.hourFormatted}
+                  </span>
+                </div>
+              </NextAppointment>
+            )}
+
+            <Section>
+              <strong>Manhã</strong>
+
+              {morningAppointments.length === 0 && (
+                <p>Nenhum agendamento neste período</p>
+              )}
+
+              {morningAppointments.map((appointment) => (
+                <Appointment key={appointment.id}>
+                  <span>
+                    <FiClock />
+                    {appointment.hourFormatted}
+                  </span>
+
+                  <div>
+                    <img
+                      src={appointment.user.avatar_url}
+                      alt={appointment.user.name}
+                    />
+
+                    <strong>{appointment.user.name}</strong>
+                  </div>
+                </Appointment>
+              ))}
+            </Section>
+
+            <Section>
+              <strong>Tarde</strong>
+
+              {afternoonAppointments.length === 0 && (
+                <p>Nenhum agendamento neste período</p>
+              )}
+
+              {afternoonAppointments.map((appointment) => (
+                <Appointment key={appointment.id}>
+                  <span>
+                    <FiClock />
+                    {appointment.hourFormatted}
+                  </span>
+
+                  <div>
+                    <img
+                      src={appointment.user.avatar_url}
+                      alt={appointment.user.name}
+                    />
+
+                    <strong>{appointment.user.name}</strong>
+                  </div>
+                </Appointment>
+              ))}
+            </Section>
+          </Schedule>
+          <Calendar>
           <h1>Horários agendados</h1>
-          <p>
-            {isToday(selectedDate) && <span>Hoje</span>}
-            <span>{selectedDateAsText}</span>
-            <span>{selectedWeekDay}</span>
-          </p>
-
-          {isToday(selectedDate) && nextAppointment && (
-            <NextAppointment>
-              <strong>Agendamento a seguir</strong>
-              <div>
-                <img
-                  src={nextAppointment.user.avatar_url}
-                  alt={nextAppointment.user.name}
-                />
-
-                <strong>{nextAppointment.user.name}</strong>
-                <span>
-                  <FiClock />
-                  {nextAppointment.hourFormatted}
-                </span>
-              </div>
-            </NextAppointment>
-          )}
-
-          <Section>
-            <strong>Manhã</strong>
-
-            {morningAppointments.length === 0 && (
-              <p>Nenhum agendamento neste período</p>
-            )}
-
-            {morningAppointments.map((appointment) => (
-              <Appointment key={appointment.id}>
-                <span>
-                  <FiClock />
-                  {appointment.hourFormatted}
-                </span>
-
-                <div>
-                  <img
-                    src={appointment.user.avatar_url}
-                    alt={appointment.user.name}
-                  />
-
-                  <strong>{appointment.user.name}</strong>
-                </div>
-              </Appointment>
-            ))}
-          </Section>
-
-          <Section>
-            <strong>Tarde</strong>
-
-            {afternoonAppointments.length === 0 && (
-              <p>Nenhum agendamento neste período</p>
-            )}
-
-            {afternoonAppointments.map((appointment) => (
-              <Appointment key={appointment.id}>
-                <span>
-                  <FiClock />
-                  {appointment.hourFormatted}
-                </span>
-
-                <div>
-                  <img
-                    src={appointment.user.avatar_url}
-                    alt={appointment.user.name}
-                  />
-
-                  <strong>{appointment.user.name}</strong>
-                </div>
-              </Appointment>
-            ))}
-          </Section>
-        </Schedule>
-        <Calendar>
-          <DayPicker
-            className="DayPicker"
-            modifiersClassNames={{
-              selected: "selected",
-              disabled: "disabled",
-              outside: "outside",
-              available: "available",
-            }}
-            mode="single"
-            fromMonth={new Date()}
-            selected={selectedDate}
-            onMonthChange={handleMonthChange}
-            modifiers={{
-              available: { dayOfWeek: [1, 2, 3, 4, 5] },
-            }}
-            onDayClick={handleDateChange}
-            disabled={[{ dayOfWeek: [0, 6] }, ...disabledDays]}
-            locale={ptBR}
-          />
-        </Calendar>
+            <p>
+              {isToday(selectedDate) && <span>Hoje</span>}
+              <span>{selectedDateAsText}</span>
+              <span>{selectedWeekDay}</span>
+            </p>
+            <DayPicker
+              className="DayPicker"
+              modifiersClassNames={{
+                selected: "selected",
+                disabled: "disabled",
+                outside: "outside",
+                available: "available",
+              }}
+              mode="single"
+              fromMonth={new Date()}
+              selected={selectedDate}
+              onMonthChange={handleMonthChange}
+              modifiers={{
+                available: { dayOfWeek: [1, 2, 3, 4, 5] },
+              }}
+              onDayClick={handleDateChange}
+              disabled={[{ dayOfWeek: [0, 6] }, ...disabledDays]}
+              locale={ptBR}
+            />
+          </Calendar>
+        </FormContent>
       </Content>
     </Container>
   );

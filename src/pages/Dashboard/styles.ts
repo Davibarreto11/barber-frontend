@@ -5,20 +5,48 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  padding: 32px 0;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 25px 0;
   background: #438b87;
+  border-radius: 0rem 0rem  3rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const HeaderContent = styled.div`
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+
 
   > img {
     height: 80px;
+    margin-right: 1rem;
   }
+  h1{
+    font-weight: 500;
+    font-size: 32px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #dcdde1;
+    cursor: default;
 
+  }
+  &:hover{
+
+    transition: 1s;
+  }
+  span{
+
+    color: #0a3d62;
+    font-weight: 400;
+    font-size: 32px;
+  }
   button {
     margin-left: 80px;
     background: transparent;
@@ -26,14 +54,17 @@ export const HeaderContent = styled.div`
     transition: box-shadow 0.3s ease-in-out;
 
     svg {
-      color: #404143;
-      width: 20px;
-      height: 20px;
-    }
+      color: #dcdde1;
+      width: 25px;
+      height: 25px;
+      transition: .2s;
+
 
     &:hover {
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+      transition: .2s;
+      color: #626262;
     }
+  }
   }
 `;
 
@@ -41,29 +72,43 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   margin-left: auto;
+  text-transform: capitalize;
 
   img {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    border-radius: 60%;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.1);
+    transition: .2s;
+    &:hover {
+      width: 68px;
+      height: 68px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+      }
   }
 
   div {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     margin-left: 16px;
     line-height: 24px;
 
     span {
       color: #404143;
+      font-size: 18px;
     }
 
     a {
       text-decoration: none;
-      color: #404143;
+      color: #dcdde1;
+      font-size: 20px;
+      transition: .1s;
 
       &:hover {
-        opacity: 0.6;
+        transition: .2s;
+        color: white;
       }
     }
   }
@@ -75,14 +120,57 @@ export const Content = styled.div`
   display: flex;
 `;
 
+export const FormContent = styled.div`
+  background-color: #e0e1e3;
+  box-shadow: 2px 1px 12px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 2rem;
+  width: 100%;
+  padding: 3rem;
+
+  position: relative;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #404143;
+    border-radius: 20px;
+  }
+
+  `;
+
+
+
 export const Schedule = styled.div`
   flex: 1;
-  margin-right: 120px;
+  width: 12REM;
+  overflow-y: scroll;
+  padding-right: 20px;
+
+  height: 500px;
+  box-shadow: inset 0px 30px 13px -30px rgba(0, 0, 0, 0.0), /* Top shadow */
+              inset 0px -30px 15px -30px rgba(0, 0, 0, 0.1); /* Bottom shadow */;
+  position: relative;
+  border-radius: 0px 0px 10px 10px ;
+
+
+
 
   h1 {
     font-size: 36px;
     color: #404143;
   }
+
 
   p {
     margin-top: 8px;
@@ -124,14 +212,14 @@ export const NextAppointment = styled.div`
     margin-top: 24px;
     position: relative;
 
+
     &::before {
       position: absolute;
-      height: 80%;
-      width: 1px;
+      height: 85%;
+      width: 3px;
       left: 0;
-      top: 10%;
       content: "";
-      background: #38ada9;
+      background: #079992;
     }
 
     img {
@@ -223,7 +311,38 @@ export const Appointment = styled.div`
 
 export const Calendar = styled.div`
   width: 380px;
+  padding-top: 1rem;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 32px;
+    color: #404143;
+  }
+
+
+  p {
+    margin-top: 8px;
+    color: #404143;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    span + span::before {
+      content: "";
+      width: 1px;
+      height: 12px;
+      background: #404143;
+      margin: 0 8px;
+    }
+  }
 
   .DayPicker {
     background: #079992;
@@ -254,7 +373,4 @@ export const Calendar = styled.div`
     color: #232129 !important;
   }
 
-  &:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  }
 `;
