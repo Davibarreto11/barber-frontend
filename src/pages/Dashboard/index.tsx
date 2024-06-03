@@ -6,7 +6,7 @@ import { ptBR } from "date-fns/locale";
 import { DayPicker, type DayModifiers } from "react-day-picker";
 import "react-day-picker/src/style.css";
 
-import { FiClock, FiLogOut } from "react-icons/fi";
+import { FiBriefcase, FiClock, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../hooks/Auth";
 
 import api from "../../services/api";
@@ -143,6 +143,38 @@ export const Dashboard: React.FC = () => {
     );
   }, [appointments]);
 
+  const plusAppointments = () => {
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    if (appointments.length * 30 === 300) {
+      return (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <span>Parabens Você Bateu a meta Hoje!</span>
+          <span>{format(today, "'Dia' dd 'de' MMMM", { locale: ptBR })}</span>
+        </div>
+      );
+    }
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginRight: 15,
+        }}
+      >
+        <span>R$ {appointments.length * 30},00/300,00</span>
+        <FiBriefcase size={25} color="#404143" />
+      </div>
+    );
+  };
+
   return (
     <Container>
       <Header>
@@ -150,6 +182,9 @@ export const Dashboard: React.FC = () => {
           <img src={logoImg} alt="Logo" />
           <h1>Barber<span>-Slot</span></h1>
           <Profile>
+            <div>
+              <span style={{ color: "#404143" }}>{plusAppointments()}</span>
+            </div>
             <img src={user.avatar_url} alt={user.name} />
             <div>
               <span>Bem-vindo,</span>
@@ -158,7 +193,6 @@ export const Dashboard: React.FC = () => {
               </Link>
             </div>
           </Profile>
-
           <button onClick={signOut} type="button">
             <FiLogOut />
           </button>
