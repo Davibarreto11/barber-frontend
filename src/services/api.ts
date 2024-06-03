@@ -12,7 +12,7 @@ interface forecastEndpointParams {
 }
 
 const forecastEndpoint = ({ cityName, days }: forecastEndpointParams): string => `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&days=${days}&aqi=no&alerts=no`
-const locationsEndpoint = ({ cityName }: forecastEndpointParams): string => `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${cityName}`
+const locationsEndpoint = ({ cityName }: forecastEndpointParams): string => `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}`
 
 const apiCall = async (endPoint: string): Promise<any> => {
   const options = {
