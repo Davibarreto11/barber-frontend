@@ -16,7 +16,7 @@ import * as Yup from "yup";
 import { useToast } from "../../hooks/Toast";
 
 import logoImg from "../../assets/logo.png";
-import { Container, Content, AnimationContainer, Background, FormContent } from "./styles";
+import { Container, Content, AnimationContainer, FormContent } from "./styles";
 
 interface ResetpasswordFormData {
   password: string;
@@ -112,7 +112,6 @@ export const ResetPassword: React.FC = () => {
         </AnimationContainer>
       </Content>
 
-      <Background />
     </Container>
   );
 };

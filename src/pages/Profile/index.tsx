@@ -1,4 +1,4 @@
-import React, { type ChangeEvent, useCallback, useRef } from "react";
+import React, { type ChangeEvent, useCallback, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FiLock, FiMail, FiUser, FiCamera, FiArrowLeft } from "react-icons/fi";
 
@@ -15,16 +15,18 @@ import defaultImage from "../../assets/pngwing.com.png";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-import { Container, AvatarInput, Content } from "./styles";
+import { Container, AvatarInput, Content, FormContent, FlexForm, Pointer } from "./styles";
 
 interface ProfileFormData {
   name: string;
   email: string;
   password: string;
+  avatar: File;
 }
 
 export const Profile: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const [avatarImg, setAvatarImg] = useState<string | null>(null)
 
   const { addToast } = useToast();
   const { user, updateUser } = useAuth();
@@ -45,15 +47,11 @@ export const Profile: React.FC = () => {
         abortEarly: false,
       });
 
+
       await api.put("/profile/update", data).then((response) => {
         updateUser(response.data);
-        addToast({
-          type: "success",
-          title: "Avatar atualizado!",
-          description: "",
-        });
 
-        navigate("/");
+
       });
     } catch (err: any) {
       addToast({
@@ -64,9 +62,15 @@ export const Profile: React.FC = () => {
     }
   }, []);
 
+  const imageUrl = avatarImg ?? defaultImage
+
   const handleAvatarChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       if (e.target.files) {
+        const urlImage = URL.createObjectURL(e.target.files[0])
+
+        setAvatarImg(urlImage)
+
         const data = new FormData();
 
         data.append("avatar", e.target.files[0]);
@@ -86,63 +90,65 @@ export const Profile: React.FC = () => {
 
   return (
     <Container>
-      <header>
-        <div>
-          <Link to="/dashboard">
-            <FiArrowLeft />
-          </Link>
-        </div>
-      </header>
+      <FlexForm>
+        <Content>
 
-      <Content>
-        <Form
-          placeholder={false}
-          onPointerEnterCapture={false}
-          onPointerLeaveCapture={false}
-          ref={formRef}
-          initialData={{ name: user.name, email: user.email }}
-          onSubmit={handleSubmit}
-        >
-          <AvatarInput>
-            <img
-              src={user.avatar_url ? user.avatar_url : defaultImage}
-              alt={user.name}
-            />
-            <label htmlFor="avatar">
-              <FiCamera />
+        <FormContent>
+            <Pointer>
+              <Link to="/dashboard">
+                <FiArrowLeft />
+              </Link>
+            </Pointer>
+            <Form
+              placeholder={false}
+              onPointerEnterCapture={false}
+              onPointerLeaveCapture={false}
+              ref={formRef}
+              initialData={{ name: user.name, email: user.email }}
+              onSubmit={handleSubmit}
+            >
+              <AvatarInput>
+                <img
+                  src={imageUrl}
+                  alt={user.name}
+                />
+                <label htmlFor="avatar">
+                  <FiCamera />
 
-              <input type="file" id="avatar" onChange={handleAvatarChange} />
-            </label>
-          </AvatarInput>
+                  <input type="file" id="avatar" onChange={handleAvatarChange} />
+                </label>
+              </AvatarInput>
 
-          <h1>Meu perfil</h1>
+              <h1>Meu perfil</h1>
 
-          <Input name="name" icon={FiUser} placeholder="Nome" />
-          <Input name="email" icon={FiMail} placeholder="E-mail" />
+              <Input name="name" icon={FiUser} placeholder="Nome" />
+              <Input name="email" icon={FiMail} placeholder="E-mail" />
 
-          <Input
-            containerStyle={{ marginTop: 24 }}
-            name="old_password"
-            icon={FiLock}
-            type="password"
-            placeholder="Senha Atual"
-          />
-          <Input
-            name="password"
-            icon={FiLock}
-            type="password"
-            placeholder="Nova senha"
-          />
-          <Input
-            name="password_confirmation"
-            icon={FiLock}
-            type="password"
-            placeholder="Confirmar senha"
-          />
+              <Input
+                containerStyle={{ marginTop: 24 }}
+                name="old_password"
+                icon={FiLock}
+                type="password"
+                placeholder="Senha Atual"
+              />
+              <Input
+                name="password"
+                icon={FiLock}
+                type="password"
+                placeholder="Nova senha"
+              />
+              <Input
+                name="password_confirmation"
+                icon={FiLock}
+                type="password"
+                placeholder="Confirmar senha"
+              />
 
-          <Button type="submit">Confirmar mundanças</Button>
-        </Form>
-      </Content>
+              <Button type="submit">Confirmar mundanças</Button>
+            </Form>
+          </FormContent>
+        </Content>
+      </FlexForm>
     </Container>
   );
 };

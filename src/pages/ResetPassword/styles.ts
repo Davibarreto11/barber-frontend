@@ -7,6 +7,8 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
+  display: flex;
+  justify-content: center;
 `;
 
 export const Content = styled.div`
@@ -90,11 +92,7 @@ a {
   }
 }
 `;
-export const Background = styled.div`
-  flex: 1;
-  background: url(${signInBackgroundImg}) no-repeat center;
-  background: cover;
-`;
+
 
 export const FormContent = styled.div`
   background-color: #dddee2;

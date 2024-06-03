@@ -157,6 +157,3 @@ export const AvatarInput = styled.div`
     }
   }
 `;
-
-
-
