@@ -106,12 +106,10 @@ export const ForgortPassword: React.FC = () => {
           </FormContent>
           <TextIntro>
             <img src={forgotIlus} />
-            <h1>Lorem Ipsum Dollor</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a
-            type specimen book.
+            <h1>Esqueceu sua Senha?</h1>
+            <p>Não se preocupe, estamos aqui para ajudar!
+              Siga os passos abaixo para redefinir sua senha
+              e voltar a agendar seus cortes de cabelo com facilidade.
             </p>
           </TextIntro>
         </AnimationContainer>
